@@ -397,8 +397,10 @@ async function confirmPassword(password) {
 
   if (data.success) {
     enableTTS = true;
+    return true;
   } else {
     enableTTS = false;
+    return false;
   }
 
   return data;
