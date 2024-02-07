@@ -89,7 +89,9 @@ async function* textStreamRes(hf, controller, input) {
 
 
 
-$("#confirmPassword").bind("click", confirmPassword);
+$("#confirmPassword").bind("click", function(){
+  confirmPassword(document.querySelector("#ttsPassword").value);
+});
 
 
 function playParagraphs(element) {
