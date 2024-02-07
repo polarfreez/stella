@@ -386,7 +386,7 @@ export function errorWarning(boldText, text){
     }, fadeSpeed + 400);
 }
 
-export async function testPassword() {
+export async function confirmPassword() {
   const passwordInput = document.getElementById('ttsPassword').value;
 
   try {
@@ -419,7 +419,7 @@ export async function testPassword() {
   }
 }
 
-export function confirmPassword() {
+/* export function confirmPassword() {
   const ttsPassword = '@Rafafa2105';
   const passwordInput = document.querySelector("#ttsPassword").value;
   if (passwordInput == ttsPassword){
@@ -432,7 +432,7 @@ export function confirmPassword() {
       errorWarning("Senha incorreta!", "Tente novamente.");
       $(".ttsCheckbox").prop("checked", false);
   }
-}
+} */
 
 
 jQuery( document).ready(function($){
