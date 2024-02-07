@@ -224,7 +224,6 @@ export function tts(text, enable, password) {
     const textToSpeech = async (inputText) => {
       const response = await fetch('https://stella-backend.vercel.app/text-to-speech', {
         method: 'POST',
-        mode: "no-cors",
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'audio/mpeg',
@@ -386,12 +385,14 @@ export function errorWarning(boldText, text){
     }, fadeSpeed + 400);
 }
 
-async function confirmPassword(password) {
-  const body = { password };
-  const response = await fetch(`${apiUrl}/check-password`, {
+export async function confirmPassword(password) {
+  const response = await fetch(`https://stella-backend.vercel.app/check-password`, {
     method: 'POST',
-    headers,
-    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ password }),
+    mode: "no-cors"
   });
   const data = await response.json();
 
