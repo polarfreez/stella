@@ -390,7 +390,7 @@ export async function confirmPassword() {
   const passwordInput = document.getElementById('ttsPassword').value;
 
   try {
-    const response = await fetch('https://stella-backend.vercel.app/test-password', {
+    const response = await fetch('https://stella-backend.vercel.app/check-password', {
       method: 'POST',
       headers: {
         'mode': 'no-cors',
