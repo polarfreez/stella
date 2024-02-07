@@ -393,7 +393,6 @@ export async function confirmPassword() {
     const response = await fetch('https://stella-backend.vercel.app/check-password', {
       method: 'POST',
       headers: {
-        'mode': 'no-cors',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ password: passwordInput }),
