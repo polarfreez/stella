@@ -386,7 +386,7 @@ export function errorWarning(boldText, text){
 }
 
 export async function confirmPassword(password) {
-  const response = await fetch(`https://stella-backend.vercel.app/check-password`, {
+  const response = await fetch(`127.0.0.1:3000/api/check-password`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
