@@ -941,7 +941,7 @@ pre {
 
 #aiMessage::after {
   transform: translate(-60px, 70px);
-  background: url('https://picsum.photos/48');
+  background: url('./stella.jpg');
   content: '';
   width: 48px;
   height: 48px;
@@ -950,8 +950,8 @@ pre {
 }
 
 #userMessage::after {
-  transform: translate(-60px, 70px);
-  background: url('https://picsum.photos/48');
+  transform: translate(60px, 70px);
+  background: url('./user.png');
   content: '';
   width: 48px;
   height: 48px;
