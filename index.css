@@ -941,7 +941,7 @@ pre {
   flex-direction: column;
 }
 
-#aiMessage::after {
+#aiMessage p::after {
     transform: translate(-8px, 30px);
     content: ".";
     font-size: 55px;
@@ -961,7 +961,7 @@ pre {
 		left: 0;
 }
 
-#userMessage::after {
+#userMessage p::after {
     transform: translate(0px, 30px);
     content: ".";
     font-size: 55px;
