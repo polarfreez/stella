@@ -942,7 +942,7 @@ pre {
 }
 
 #aiMessage p::after {
-    transform: translate(-8px, 30px);
+    transform: translate(0px, 30px);
     content: ".";
     font-size: 55px;
     width: 55px;
