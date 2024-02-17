@@ -143,6 +143,7 @@ async function run(rawInput, password) {
         gen.innerHTML = marked.parse(gen.textContent);
         let historyElement = document.querySelector("#history");
         let historyMessageGroup = document.querySelector("#messageIndex" + messageIndex);
+        let textElement = document.createElement('div');
 
         gen.id = "aiMessage";
 
@@ -151,8 +152,10 @@ async function run(rawInput, password) {
           historyElement.lastElementChild.scrollIntoView({ behavior: 'smooth' });
       }, 0);
       
-      
-        historyMessageGroup.appendChild(gen);
+
+        textElement.appendChild(gen);
+        historyMessageGroup.appendChild(textElement);
+        
 
         
 
