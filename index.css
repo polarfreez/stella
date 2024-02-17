@@ -941,22 +941,26 @@ pre {
 
 #aiMessage::after {
   transform: translate(-60px, 70px);
-  background: url('./stella.jpg');
+  background: url('./images/stella.jpg');
   content: '';
   width: 48px;
   height: 48px;
   left: 0;
   position: absolute;
+	background-size: contain;
+  border-radius: 50%;
 }
 
 #userMessage::after {
   transform: translate(60px, 70px);
-  background: url('./user.png');
+  background: url('./images/user.png');
   content: '';
   width: 48px;
   height: 48px;
   right: 0;
   position: absolute;
+	background-size: contain;
+  border-radius: 50%;
 }
 
 #aiMessage p::after {
