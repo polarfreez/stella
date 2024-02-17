@@ -946,6 +946,7 @@ pre {
   width: 48px;
   height: 48px;
   left: 0;
+	bottom: 0;
   position: absolute;
 	background-size: contain;
   border-radius: 50%;
@@ -957,6 +958,7 @@ pre {
   content: '';
   width: 48px;
   height: 48px;
+	bottom: 0;
   right: 0;
   position: absolute;
 	background-size: contain;
