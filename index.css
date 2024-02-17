@@ -941,6 +941,44 @@ pre {
   flex-direction: column;
 }
 
+#aiMessage::after {
+    transform: translate(-8px, 30px);
+    content: ".";
+    font-size: 55px;
+    width: 55px;
+    height: 11px;
+    line-height: 0;
+    border-radius: 11px;
+    background-color: #0d0a1c;
+    border: solid 2px #4f4789;
+    position: absolute;
+    display: block;
+    color: #0d0a1c;
+    -webkit-text-stroke: 2px #4f4789;
+    font-family: system-ui;
+    text-align: left;
+    font-size: 70px;
+}
+
+#userMessage::after {
+    transform: translate(-8px, 30px);
+    content: ".";
+    font-size: 55px;
+    width: 55px;
+    height: 11px;
+    line-height: 0;
+    border-radius: 11px;
+    background-color: #0d0a1c;
+    border: solid 2px #4f4789;
+    position: absolute;
+    display: block;
+    color: #0d0a1c;
+    -webkit-text-stroke: 2px #4f4789;
+    font-family: system-ui;
+    text-align: right;
+    font-size: 70px;
+}
+
 #submit {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
