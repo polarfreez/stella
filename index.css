@@ -22,7 +22,7 @@ body {
     text-decoration: none !important;
   }
 
-  p, textarea, input, strong, .ttsModalPasswordContainer, #settingsModal, .chat-container {
+  p, textarea, table, input, strong, .ttsModalPasswordContainer, #settingsModal, .chat-container {
     color: white !important;
   }
   
