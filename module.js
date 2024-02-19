@@ -272,15 +272,7 @@ $("#clearHistory").bind("click", function () {
   infoWarning("Chat resetado!", "O histórico dessa conversa foi limpo!");
   historyElement.style.animation = "fadeOut 0.5s ease-in-out forwards";
   setTimeout(() => {
-    let messageElement = document.createElement("div");
-    messageElement.id = "aiMessage";
-    historyElement.innerHTML = "";
-    messageElement.innerHTML = "<p>Olá, eu sou Stella. Como posso ajudar?</p>";
-    let historyMessageGroup = document.createElement("div");
-    historyMessageGroup.id = "messageIndex0";
-    historyMessageGroup.setAttribute("class", "messageGroup");
-    historyMessageGroup.appendChild(messageElement);
-    historyElement.appendChild(historyMessageGroup);
+    $('#history div').not('#messageIndex0, #messageIndex0 *').remove();
     historyElement.style.animation = "fadeIn 0.5s ease-in-out forwards";
   }, 525);
 });
