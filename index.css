@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
 
 body *:not(.background) {
   animation: fadeIn 0.5s ease-in-out;
@@ -6,369 +6,376 @@ body *:not(.background) {
 }
 
 body {
-    font-family: "Exo 2", sans-serif !important;
-    background: #070815 !important;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  a {
-    color: white !important;
-    text-decoration: none !important;
-  }
-
-  p, textarea, table, input, strong, .ttsModalPasswordContainer, #settingsModal, .chat-container {
-    color: white !important;
-  }
-  
-  .background {
-    background: linear-gradient(90deg, #0c0913 20.6px, transparent 1%) center,
-      linear-gradient(#0c0913 21.6px, transparent 1%) center, #a799cc;
-    background-size: 22px 22px;
-    background-position: -19px -19px, 0 0;
-    animation: breath 20s ease-in-out infinite;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-  
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 70%;
-		max-height: 70%;
-  }
-  
-  #chat-messages {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .input-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    position: fixed;
-    bottom: 2.3rem;
-    flex-direction: row-reverse;
+  font-family: "Exo 2", sans-serif !important;
+  background: #070815 !important;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-  
-  #input {
-    border: 2px solid rgb(242, 242, 242);
-    caret-color: rgb(242, 242, 242);
-    color: rgb(242, 242, 242) !important;
-    -webkit-animation: inputVisibilityB 0.8s infinite alternate;
-    animation: inputVisibilityB 0.8s infinite alternate;
-    background: rgba(0, 0, 0, 0.263);
-    bottom: 32px;
-    font-weight: 320;
-    min-height: 32px;
-    outline: none;
-    padding-inline: 8px;
-    padding-top: 6px;
-    transition: border-color 0.1s, color 0.1s, text-shadow 0.1s,
-      -webkit-transform 0.3s;
-    transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s;
-    transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s,
-      -webkit-transform 0.3s;
-    width: 240px;
-    transition: all 0.2s ease-in-out;
-    box-sizing: border-box;
-    overflow: hidden;
-    z-index: 20;
-    resize: none;
-    padding-bottom: 10px;
-    backdrop-filter: blur(2px);
-  }
 
-  #input span{
-    color: white !important;
-    font-weight: 320;
-  }
+a {
+  color: white !important;
+  text-decoration: none !important;
+}
 
-  #input::placeholder {
-    text-align: center;
+p,
+textarea,
+table,
+input,
+strong,
+.ttsModalPasswordContainer,
+#settingsModal,
+.chat-container {
+  color: white !important;
+}
+
+.background {
+  background: linear-gradient(90deg, #0c0913 20.6px, transparent 1%) center,
+    linear-gradient(#0c0913 21.6px, transparent 1%) center, #a799cc;
+  background-size: 22px 22px;
+  background-position: -19px -19px, 0 0;
+  animation: breath 20s ease-in-out infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 70%;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+#chat-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: fixed;
+  bottom: 2.3rem;
+  flex-direction: row-reverse;
+}
+
+#input {
+  border: 2px solid rgb(242, 242, 242);
+  caret-color: rgb(242, 242, 242);
+  color: rgb(242, 242, 242) !important;
+  -webkit-animation: inputVisibilityB 0.8s infinite alternate;
+  animation: inputVisibilityB 0.8s infinite alternate;
+  background: rgba(0, 0, 0, 0.263);
+  bottom: 32px;
+  font-weight: 320;
+  min-height: 32px;
+  outline: none;
+  padding-inline: 8px;
+  padding-top: 6px;
+  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s,
+    -webkit-transform 0.3s;
+  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s;
+  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s,
+    -webkit-transform 0.3s;
+  width: 240px;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 20;
+  resize: none;
+  padding-bottom: 10px;
+  backdrop-filter: blur(2px);
+}
+
+#input span {
+  color: white !important;
+  font-weight: 320;
+}
+
+#input::placeholder {
+  text-align: center;
+}
+
+#input:focus {
+  width: 400px;
+}
+
+/* Animation keyframes - you need to add prefixes */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  #input:focus {
-    width: 400px; 
+  25% {
+    transform: rotate(360deg);
   }
-  
-  /* Animation keyframes - you need to add prefixes */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(360deg);
-    }
-    50% {
-      transform: rotate(180deg);
-    }
-    75% {
-      transform: rotate(360deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+  50% {
+    transform: rotate(180deg);
   }
-  
-  @keyframes spinthick {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  75% {
+    transform: rotate(360deg);
   }
-  
-  @keyframes blink {
-    0% {
-      opacity: 0.8;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 0.8;
-    }
+  100% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes glow {
-    0% {
-      box-shadow: 0px 0px 20px 4px #338ec2;
-    }
-    100% {
-      box-shadow: 0px 0px 20px 4px #bb9026;
-    }
+}
+
+@keyframes spinthick {
+  from {
+    transform: rotate(0deg);
   }
-  
-  @keyframes reverseGlow {
-    0% {
-      box-shadow: 0px 0px 20px 4px #bb9026;
-    }
-    100% {
-      box-shadow: 0px 0px 20px 4px #338ec2;
-    }
+  to {
+    transform: rotate(360deg);
   }
-  
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0px 0px 20px 4px #338ec2;
+  }
+  100% {
+    box-shadow: 0px 0px 20px 4px #bb9026;
+  }
+}
+
+@keyframes reverseGlow {
+  0% {
+    box-shadow: 0px 0px 20px 4px #bb9026;
+  }
+  100% {
+    box-shadow: 0px 0px 20px 4px #338ec2;
+  }
+}
+
 /* Loading animation container */
 .loading {
-    position: fixed;
-    top: 50px;
-    right: 58px;
-    width: 42px;
-    height: 42px;
-    margin: -14px 0 0 -14px;
-    transition: top 0.2s linear;
+  position: fixed;
+  top: 50px;
+  right: 58px;
+  width: 42px;
+  height: 42px;
+  margin: -14px 0 0 -14px;
+  transition: top 0.2s linear;
 }
-  
-  /* Spinning circle (inner circle) */
-  .loading .maskedCircle {
-    width: 39px;
-    height: 39px;
-    border-radius: 20px;
-    animation: blink 1s infinite linear;
-    border: 6px solid #43d5ff;
-    box-shadow: 0px 0px 20px 4px #338ec2;
-    transition: all 0.2s linear;
-    transform: translate(1px, -1px);
+
+/* Spinning circle (inner circle) */
+.loading .maskedCircle {
+  width: 39px;
+  height: 39px;
+  border-radius: 20px;
+  animation: blink 1s infinite linear;
+  border: 6px solid #43d5ff;
+  box-shadow: 0px 0px 20px 4px #338ec2;
+  transition: all 0.2s linear;
+  transform: translate(1px, -1px);
+}
+
+@keyframes color {
+  from {
+    border: 5px solid #43d5ff;
   }
-  
-  @keyframes color {
-    from {
-      border: 5px solid #43d5ff;
-    }
-    to {
-      border: 5px solid #eeda53;
-    }
+  to {
+    border: 5px solid #eeda53;
   }
-  
-  @keyframes reverseColor {
-    from {
-      border: 5px solid #eeda53;
-    }
-    to {
-      border: 5px solid #43d5ff;
-    }
+}
+
+@keyframes reverseColor {
+  from {
+    border: 5px solid #eeda53;
   }
-  
-  /* Spinning circle mask */
-  .loading .mask {
-    width: 42px;
-    height: 42px;
+  to {
+    border: 5px solid #43d5ff;
   }
-  
-  /* Spinner */
-  .loading .spinner {
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    width: 38px;
-    height: 38px;
-  }
-  
-  .spinline {
-    position: fixed;
-    top: 52px;
-    right: 60px;
-    width: 38px;
-    height: 6px;
-    background: black;
-    opacity: 0.5;
-    border-radius: 6px;
-    box-shadow: 0 0 8px 2px;
-    animation: spin 12s infinite reverse;
-    color: black;
-  }
-  .spinline2 {
-    position: fixed;
-    top: 52px;
-    right: 60px;
-    width: 38px;
-    height: 10px;
-    background: black;
-    animation: spinthick 4s infinite reverse;
-    opacity: 0.5;
-    border-radius: 6px;
-    box-shadow: 0 0 15px 5px;
-    color: black;
-  }
-  .spinline3 {
-    position: fixed;
-    top: 52px;
-    right: 60px;
-    width: 36px;
-    height: 6px;
-    background: black;
-    animation: spinthick 2s infinite reverse;
-    animation-delay: 1s;
-    opacity: 0.5;
-    border-radius: 6px;
-    box-shadow: 0 0 20px 6px;
-    color: black;
-  }
-  
-  #message {
-    transition: all 0.25s ease-in-out;
-    z-index: 10;
-    max-height: 100%;
-  }
-  
-  #message * {
-    transition: all 0.25s ease-in-out;
+}
+
+/* Spinning circle mask */
+.loading .mask {
+  width: 42px;
+  height: 42px;
+}
+
+/* Spinner */
+.loading .spinner {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 38px;
+  height: 38px;
+}
+
+.spinline {
+  position: fixed;
+  top: 52px;
+  right: 60px;
+  width: 38px;
+  height: 6px;
+  background: black;
+  opacity: 0.5;
+  border-radius: 6px;
+  box-shadow: 0 0 8px 2px;
+  animation: spin 12s infinite reverse;
+  color: black;
+}
+.spinline2 {
+  position: fixed;
+  top: 52px;
+  right: 60px;
+  width: 38px;
+  height: 10px;
+  background: black;
+  animation: spinthick 4s infinite reverse;
+  opacity: 0.5;
+  border-radius: 6px;
+  box-shadow: 0 0 15px 5px;
+  color: black;
+}
+.spinline3 {
+  position: fixed;
+  top: 52px;
+  right: 60px;
+  width: 36px;
+  height: 6px;
+  background: black;
+  animation: spinthick 2s infinite reverse;
+  animation-delay: 1s;
+  opacity: 0.5;
+  border-radius: 6px;
+  box-shadow: 0 0 20px 6px;
+  color: black;
+}
+
+#message {
+  transition: all 0.25s ease-in-out;
+  z-index: 10;
+  max-height: 100%;
+}
+
+#message * {
+  transition: all 0.25s ease-in-out;
+}
+
+.fadeIn {
+  animation: fadeIn 0.2s ease-in-out forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
 
-  .fadeIn {
-    animation: fadeIn 0.2s ease-in-out forwards;
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
   }
 
-  .fadeOut {
-    animation: fadeOut 0.2s ease-in-out forwards;
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-  
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  
-    to {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-  }
-  
-  @keyframes breath {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  /* Código CSS existente omitido por simplicidade */
-  
-  /* Estilos para o botão de voltar */
-  .back-button {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 10px;
-    color: white !important;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    z-index: 20;
-  }
-  
-  .back-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    fill: white;
-  }
+}
 
-  ul {
-    padding-inline-start: 40px;
+@keyframes breath {
+  0% {
+    transform: scale(1);
   }
-
-  li {
-    list-style: disc;
+  50% {
+    transform: scale(1.2);
   }
-
-  p {
-    margin-bottom: 10px !important;
+  100% {
+    transform: scale(1);
   }
+}
 
+/* Código CSS existente omitido por simplicidade */
+
+/* Estilos para o botão de voltar */
+.back-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  color: white !important;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  fill: white;
+}
+
+ul {
+  padding-inline-start: 40px;
+}
+
+li {
+  list-style: disc;
+}
+
+p {
+  margin-bottom: 10px !important;
+}
 
 @media (max-width: 800px) {
-  #input:focus{
-      width: 240px;
+  #input:focus {
+    width: 240px;
   }
 
   #settingsModal {
     width: 350px !important;
   }
-  
+
   #ttsModalPassword {
     width: 350px !important;
   }
 
-  .chat-container {
-		width: 60%;
-	}
+  .history {
+    width: 70%;
+  }
 }
 
 #ttsModalPassword {
@@ -384,10 +391,9 @@ body {
   text-align: center;
 }
 
-
- #ttsModalPassword input{
+#ttsModalPassword input {
   background-color: #0d0a1c;
-  border: solid 1px #4F4789;
+  border: solid 1px #4f4789;
   caret-color: rgb(242, 242, 242);
   color: rgb(242, 242, 242);
   -webkit-animation: inputVisibilityB 0.8s infinite alternate;
@@ -399,9 +405,11 @@ body {
   outline: none;
   padding-inline: 8px;
   padding-top: 6px;
-  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, -webkit-transform 0.3s;
+  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s,
+    -webkit-transform 0.3s;
   transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s;
-  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s, -webkit-transform 0.3s;
+  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s,
+    -webkit-transform 0.3s;
   width: 240px;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
@@ -411,47 +419,45 @@ body {
   padding-bottom: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
- }
+}
 
- .ttsModalPasswordContainer {
+.ttsModalPasswordContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
- }
- 
-.alert>.start-icon {
+}
+
+.alert > .start-icon {
   margin-right: 0;
   min-width: 20px;
   text-align: center;
 }
 
-.alert>.start-icon {
+.alert > .start-icon {
   margin-right: 5px;
 }
 
-.alert-simple.alert-success
-{
-border: 1px solid rgba(36, 241, 6, 0.46);
+.alert-simple.alert-success {
+  border: 1px solid rgba(36, 241, 6, 0.46);
   background-color: rgba(7, 149, 66, 0.12156862745098039);
   box-shadow: 0px 0px 2px #259c08;
   color: #0ad406;
-text-shadow: 2px 1px #00040a;
-transition:0.5s;
-cursor:pointer;
+  text-shadow: 2px 1px #00040a;
+  transition: 0.5s;
+  cursor: pointer;
 }
-.alert-success:hover{
-background-color: rgba(7, 149, 66, 0.35);
-transition:0.5s;
+.alert-success:hover {
+  background-color: rgba(7, 149, 66, 0.35);
+  transition: 0.5s;
 }
-.alert-simple.alert-info
-{
-border: 1px solid rgba(6, 44, 241, 0.46);
+.alert-simple.alert-info {
+  border: 1px solid rgba(6, 44, 241, 0.46);
   background-color: rgba(7, 73, 149, 0.12156862745098039);
   box-shadow: 0px 0px 2px #0396ff;
   color: #0396ff;
-text-shadow: 2px 1px #00040a;
-transition:0.5s;
-cursor:pointer;
+  text-shadow: 2px 1px #00040a;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .warning-notification {
@@ -465,7 +471,7 @@ cursor:pointer;
 }
 
 .alert:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: calc(100% - 44px);
@@ -475,10 +481,9 @@ cursor:pointer;
   border-top-right-radius: 3px;
   left: 0;
   top: 50%;
-  transform: translate(0,-50%);
-    height: 20px;
+  transform: translate(0, -50%);
+  height: 20px;
 }
-
 
 .square_box {
   position: absolute;
@@ -513,26 +518,22 @@ cursor:pointer;
   border-radius: 45px;
 }
 
-
-.alert-simple.alert-danger
-{
+.alert-simple.alert-danger {
   border: 1px solid rgba(241, 6, 6, 0.81);
-    background-color: rgba(220, 17, 1, 0.16);
-    box-shadow: 0px 0px 2px #ff0303;
-    color: #ff0303;
-    text-shadow: 2px 1px #00040a;
-  transition:0.5s;
-  cursor:pointer;
+  background-color: rgba(220, 17, 1, 0.16);
+  box-shadow: 0px 0px 2px #ff0303;
+  color: #ff0303;
+  text-shadow: 2px 1px #00040a;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-.alert-danger:hover
-{
-     background-color: rgba(220, 17, 1, 0.33);
-  transition:0.5s;
+.alert-danger:hover {
+  background-color: rgba(220, 17, 1, 0.33);
+  transition: 0.5s;
 }
 
-.danger
-{
+.danger {
   font-size: 18px;
   color: #ff0303;
   text-shadow: none;
@@ -567,7 +568,7 @@ cursor:pointer;
 }
 
 .alert:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: calc(100% - 44px);
@@ -577,31 +578,29 @@ cursor:pointer;
   border-top-right-radius: 3px;
   left: 0;
   top: 50%;
-  transform: translate(0,-50%);
-    height: 20px;
+  transform: translate(0, -50%);
+  height: 20px;
 }
 
-.greencross
-{
-  font-size:18px;
+.greencross {
+  font-size: 18px;
   color: #25ff0b;
   text-shadow: none;
   cursor: pointer;
 }
 
-.alert-simple.alert-success
-{
+.alert-simple.alert-success {
   border: 1px solid rgba(36, 241, 6, 0.46);
-    background-color: rgba(7, 149, 66, 0.12156862745098039);
-    box-shadow: 0px 0px 2px #259c08;
-    color: #0ad406;
+  background-color: rgba(7, 149, 66, 0.12156862745098039);
+  box-shadow: 0px 0px 2px #259c08;
+  color: #0ad406;
   text-shadow: 2px 1px #00040a;
-  transition:0.5s;
-  cursor:pointer;
+  transition: 0.5s;
+  cursor: pointer;
 }
-.alert-success:hover{
+.alert-success:hover {
   background-color: rgba(7, 149, 66, 0.35);
-  transition:0.5s;
+  transition: 0.5s;
 }
 
 .alert-dismissible .close {
@@ -609,24 +608,22 @@ cursor:pointer;
   cursor: pointer;
 }
 
-.alert-simple.alert-warning
-{
-      border: 1px solid rgba(241, 142, 6, 0.81);
-    background-color: rgba(220, 128, 1, 0.16);
-    box-shadow: 0px 0px 2px #ffb103;
-    color: #ffb103;
-    text-shadow: 2px 1px #00040a;
-  transition:0.5s;
-  cursor:pointer;
+.alert-simple.alert-warning {
+  border: 1px solid rgba(241, 142, 6, 0.81);
+  background-color: rgba(220, 128, 1, 0.16);
+  box-shadow: 0px 0px 2px #ffb103;
+  color: #ffb103;
+  text-shadow: 2px 1px #00040a;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-.alert-warning:hover{
+.alert-warning:hover {
   background-color: rgba(220, 128, 1, 0.33);
-  transition:0.5s;
+  transition: 0.5s;
 }
 
-.warning
-{
+.warning {
   font-size: 18px;
   color: #ffb40b;
   text-shadow: none;
@@ -727,60 +724,57 @@ cursor:pointer;
 }
 
 .ttsSettingsText p {
-  margin-inline: .5rem;
+  margin-inline: 0.5rem;
 }
 
-.alert-simple.alert-info
-{
+.alert-simple.alert-info {
   border: 1px solid rgba(6, 44, 241, 0.46);
-    background-color: rgba(7, 73, 149, 0.12156862745098039);
-    box-shadow: 0px 0px 2px #0396ff;
-    color: #0396ff;
+  background-color: rgba(7, 73, 149, 0.12156862745098039);
+  box-shadow: 0px 0px 2px #0396ff;
+  color: #0396ff;
   text-shadow: 2px 1px #00040a;
-  transition:0.5s;
-  cursor:pointer;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-.alert-info:hover
-{
+.alert-info:hover {
   background-color: rgba(7, 73, 149, 0.35);
-  transition:0.5s;
+  transition: 0.5s;
 }
 
-.blue-cross
-{
+.blue-cross {
   font-size: 18px;
   color: #0bd2ff;
   text-shadow: none;
   cursor: pointer;
 }
 
-.btn_{
+.btn_ {
   font-size: 14px;
   color: #fff;
   background-color: #ffffff00;
   padding: 10px 30px;
   border: 2px solid #ffffff;
   border-radius: 1px;
-  transition : all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   text-transform: uppercase;
   user-select: none;
-  }
-  
-.btn_:hover{  
-  transition : all .2s ease-in-out;
+}
+
+.btn_:hover {
+  transition: all 0.2s ease-in-out;
   padding: 10px 30px;
   background-color: #ffffff00;
   color: #ffffff;
   border: solid 2px #7b00ff;
-  }
+}
 
-.btn_:active{  
-  transition : all .2s ease-in-out;
+.btn_:active {
+  transition: all 0.2s ease-in-out;
   padding: 10px 30px;
   background-color: #ffffff00;
   color: #ffffff;
@@ -798,12 +792,12 @@ cursor:pointer;
 }
 
 #clearHistory:hover {
-  box-shadow: inset red 0px 0px 10px 3px,  red 0px 0px 10px 3px;
+  box-shadow: inset red 0px 0px 10px 3px, red 0px 0px 10px 3px;
 }
 
 #clearHistory:active {
   border: solid 2px red;
-  box-shadow: inset red 0px 0px 13px 6px,  red 0px 0px 13px 6px;
+  box-shadow: inset red 0px 0px 13px 6px, red 0px 0px 13px 6px;
   transition: all 0s ease-in-out;
 }
 
@@ -817,10 +811,10 @@ cursor:pointer;
 
 .modals {
   background-color: #0d0a1c;
-  border: solid 1px #4F4789;
+  border: solid 1px #4f4789;
 }
 
-[contenteditable=true]:empty:before {
+[contenteditable="true"]:empty:before {
   content: attr(placeholder);
   color: #999;
   position: relative;
@@ -834,7 +828,7 @@ cursor:pointer;
 }
 
 pre {
-  border: solid #30363D 1px;
+  border: solid #30363d 1px;
   background: #161b22;
   color: white;
   padding: 16px;
@@ -842,34 +836,34 @@ pre {
   position: relative;
 }
 
-.pre-wrapper{
-	position:relative;
+.pre-wrapper {
+  position: relative;
 }
-.pre-wrapper pre{
-	padding-top: 25px;
+.pre-wrapper pre {
+  padding-top: 25px;
 }
 .pre-wrapper .copy-snippet {
-	border-radius: 0;
-	min-width:55px;
-	background: none repeat scroll 0 0 transparent;
-	border: 1px solid #bbb;
-	color: #26589F;
-	font-family: 'HELEVETICA',sans-serif;
-	font-size: 12px;
-	font-weight: normal;
-	line-height: 1.42rem;
-	margin: 0;
-	padding: 0px 5px;
-	text-align: center;
-	text-decoration: none;
-	text-indent: 0;
-	position:absolute;
-	background:#ccc;
-	top:0;
-	left:0;
+  border-radius: 0;
+  min-width: 55px;
+  background: none repeat scroll 0 0 transparent;
+  border: 1px solid #bbb;
+  color: #26589f;
+  font-family: "HELEVETICA", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.42rem;
+  margin: 0;
+  padding: 0px 5px;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  position: absolute;
+  background: #ccc;
+  top: 0;
+  left: 0;
 }
-.pre-wrapper .copy-snippet:disabled{
-	color:#555;
+.pre-wrapper .copy-snippet:disabled {
+  color: #555;
 }
 
 .copy-button {
@@ -895,7 +889,7 @@ pre {
   font-weight: 600 !important;
 }
 
-#message a:hover{
+#message a:hover {
   text-decoration: underline !important;
 }
 
@@ -909,14 +903,13 @@ pre {
   flex-direction: column;
   color: white !important;
   margin-top: 20px;
-  width: 100%;
+  width: 80%;
   height: 70%;
 }
 
 #aiMessage {
   align-self: flex-start;
   margin-right: 30%;
-
 }
 
 #userMessage {
@@ -927,83 +920,87 @@ pre {
 .messageGroup {
   display: flex;
   flex-direction: column;
-
 }
 
-#userMessage, #aiMessage {
+#userMessage,
+#aiMessage {
   min-width: 10rem;
   max-width: 75%;
   background-color: #0d0a1c;
-  border: solid 1px #4F4789;
+  border: solid 1px #4f4789;
   padding: 8px;
   margin-bottom: 8px;
   flex-direction: column;
 }
 
-#aiMessage::after {
-  transform: translate(-60px, 70px);
-  background: url('./images/stella.jpg');
-  content: '';
+#aiProfile {
+  transform: translate(-60px, 15px);
+  align-self; flex-start;
+  background: url(./images/stella.jpg);
+  content: "";
   width: 48px;
   height: 48px;
   left: 0;
-	bottom: 0;
-  position: absolute;
-	background-size: contain;
+  /* bottom: 0; */
+  position: relative;
+  background-size: contain;
   border-radius: 50%;
 }
 
-#userMessage::after {
-  transform: translate(60px, 70px);
-  background: url('./images/user.svg');
-  content: '';
+#userProfile {
+  transform: translate(60px, 15px);
+  align-self: flex-end;
+  background: url(./images/user.svg);
+  content: "";
   width: 48px;
   height: 48px;
-	bottom: 0;
-  right: 0;
-  position: absolute;
-	background-size: contain;
+  bottom: 0;
+  left: 0;
+  position: relative;
+  background-size: contain;
   border-radius: 50%;
 }
 
-#aiMessage p::after {
-    transform: translate(0px, 30px);
-    content: ".";
-    font-size: 55px;
-    width: 55px;
-    height: 11px;
-    line-height: 0;
-    border-radius: 11px;
-    background-color: #0d0a1c;
-    border: solid 2px #4f4789;
-    position: absolute;
-    display: block;
-    color: #0d0a1c;
-    -webkit-text-stroke: 2px #4f4789;
-    font-family: system-ui;
-    text-align: left;
-    font-size: 70px;
-		left: 0;
+#aiProfile::after {
+  transform: translate(60px, -10px);
+  content: ".";
+  font-size: 55px;
+  width: 55px;
+  height: 11px;
+  line-height: 0;
+  border-radius: 11px;
+  background-color: #0d0a1c;
+  border: solid 2px #4f4789;
+  position: relative;
+  display: block;
+  color: #0d0a1c;
+  -webkit-text-stroke: 2px #4f4789;
+  font-family: system-ui;
+  text-align: left;
+  font-size: 70px;
+  left: 0;
+  transition: all 0.5s ease;
 }
 
-#userMessage p::after {
-    transform: translate(0px, 30px);
-    content: ".";
-    font-size: 55px;
-    width: 55px;
-    height: 11px;
-    line-height: 0;
-    border-radius: 11px;
-    background-color: #0d0a1c;
-    border: solid 2px #4f4789;
-    position: absolute;
-    display: block;
-    color: #0d0a1c;
-    -webkit-text-stroke: 2px #4f4789;
-    font-family: system-ui;
-    text-align: right;
-    font-size: 70px;
-		right: 0;
+#userProfile::after {
+  transform: translate(-60px, -10px);
+  content: ".";
+  font-size: 55px;
+  width: 55px;
+  height: 11px;
+  line-height: 0;
+  border-radius: 11px;
+  background-color: #0d0a1c;
+  border: solid 2px #4f4789;
+  position: absolute;
+  display: block;
+  color: #0d0a1c;
+  -webkit-text-stroke: 2px #4f4789;
+  font-family: system-ui;
+  text-align: right;
+  font-size: 70px;
+  right: 0;
+  transition: all 0.5s ease;
 }
 
 #submit {
@@ -1011,7 +1008,7 @@ pre {
   cursor: pointer;
 }
 
-#submit:hover{
+#submit:hover {
   transform: scale(1.1);
 }
 
