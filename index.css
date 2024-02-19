@@ -51,7 +51,6 @@ strong,
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   width: 70%;
   max-height: 70%;
@@ -373,8 +372,18 @@ p {
     width: 350px !important;
   }
 
-  .history {
-    width: 70%;
+  #history {
+    width: 65% !important;
+  }
+
+  .chat-container {
+    width: 100% !important;
+  }
+
+  #aiMessage, #userMessage {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    max-width: 90% !important;
   }
 }
 
@@ -945,6 +954,7 @@ pre {
   position: relative;
   background-size: contain;
   border-radius: 50%;
+  transition: all 0.5s ease-in-out;
 }
 
 #userProfile {
@@ -959,6 +969,7 @@ pre {
   position: relative;
   background-size: contain;
   border-radius: 50%;
+  transition: all 0.5s ease-in-out;
 }
 
 #aiProfile::after {
