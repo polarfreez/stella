@@ -210,13 +210,13 @@ async function run(rawInput, password) {
                 .then(() => {
                   // show a success message
                   infoWarning(
-                    "Copied to clipboard!",
-                    "The text was copied to your clipboard."
+                    "Copiado!",
+                    "O texto foi copiado para sua área de transferência."
                   );
                 })
                 .catch((error) => {
                   // show an error message
-                  errorWarning("Copy failed:", error);
+                  errorWarning("A cópia falhou:", error);
                 });
             });
           }
