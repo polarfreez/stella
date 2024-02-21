@@ -899,9 +899,9 @@ pre {
 #history {
   flex-direction: column;
   color: white !important;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 80%;
-  height: 70%;
+  margin-bottom: 40px;
 }
 
 #aiMessage {
