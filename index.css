@@ -7,7 +7,6 @@ body *:not(.background) {
 
 body {
   font-family: "Exo 2", sans-serif !important;
-  background: #070815 !important;
   color: white;
   display: flex;
   flex-direction: column;
@@ -31,20 +30,6 @@ strong,
 #settingsModal,
 .chat-container {
   color: white !important;
-}
-
-.background {
-  background: linear-gradient(90deg, #0c0913 20.6px, transparent 1%) center,
-    linear-gradient(#0c0913 21.6px, transparent 1%) center, #a799cc;
-  background-size: 22px 22px;
-  background-position: -19px -19px, 0 0;
-  animation: breath 20s ease-in-out infinite;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
 }
 
 .chat-container {
