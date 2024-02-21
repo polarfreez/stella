@@ -1,292 +1,288 @@
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stella</title>
-
-    <meta charset="UTF-8" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moo/moo.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/json-loose/dist/index.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/attributes-parser/dist/index.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked-code-preview/dist/index.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked-emoji@1.3.1/lib/index.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked-highlight/lib/index.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- polyfill for firefox + import maps -->
-    <script src="https://unpkg.com/es-module-shims@1.7.0/dist/es-module-shims.js"></script>
-    <script src="/js/ai-background.js">
-    <script type="importmap">
-      {
-        "imports": {
-          "@huggingface/inference": "https://cdn.jsdelivr.net/npm/@huggingface/inference@1.7.1/+esm"
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="./index.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css"
-    />
-    <link rel="stylesheet" href="./github-dark.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/css/ai-background.css"
-    />
-    <link rel="icon" type="image/svg+xml" href="/images/chat.svg" />
-  </head>
-
-  <body>
-    <div class="background"></div>
-    <a href="/ai-selector" class="back-button">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Stella</title>
+      <meta charset="UTF-8" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/moo/moo.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/json-loose/dist/index.umd.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/attributes-parser/dist/index.umd.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/marked-code-preview/dist/index.umd.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/marked-emoji@1.3.1/lib/index.umd.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/marked-highlight/lib/index.umd.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+      <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <!-- polyfill for firefox + import maps -->
+      <script src="https://unpkg.com/es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+      <script src="/js/ai-background.js">
+         <script type="importmap">
+           {
+             "imports": {
+               "@huggingface/inference": "https://cdn.jsdelivr.net/npm/@huggingface/inference@1.7.1/+esm"
+             }
+           }
+      </script>
+      <link rel="stylesheet" href="./index.css" />
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+         />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+         />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.min.css"
+         />
+      <link rel="stylesheet" href="./github-dark.css" />
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+         />
+      <link
+         rel="stylesheet"
+         href="/css/ai-background.css"
+         />
+      <link rel="icon" type="image/svg+xml" href="/images/chat.svg" />
+   </head>
+   <body>
+      <div class="background"></div>
+      <a href="/ai-selector" class="back-button">
       <img src="./images/back.svg" class="back-icon" alt="Voltar" />
       Voltar
-    </a>
-    <div id="successfulWarning" class="warning-notification">
-      <div class="col-sm-12">
-        <div
-          class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
-        >
-          <a
-            class="close font__size-18"
-            data-dismiss="alert"
-            id="closeSuccessfulWarning"
-          >
-            <span aria-hidden="true">
-              <i class="fa fa-times greencross"></i>
-            </span>
-            <span class="sr-only">Close</span>
-          </a>
-          <i class="start-icon far fa-check-circle faa-tada"></i>
-          <strong class="font__weight-semibold"></strong>
-        </div>
-      </div>
-    </div>
-
-    <div id="infoWarning" class="warning-notification">
-      <div class="col-sm-12">
-        <div
-          class="alert fade alert-simple alert-info alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
-          role="alert"
-          data-brk-library="component__alert"
-        >
-          <a
-            class="close font__size-18"
-            data-dismiss="alert"
-            id="closeInfoWarning"
-          >
-            <span aria-hidden="true">
-              <i class="fa fa-times blue-cross"></i>
-            </span>
-            <span class="sr-only">Close</span>
-          </a>
-          <i class="start-icon fa fa-info-circle faa-shake"></i>
-          <strong class="font__weight-semibold"></strong>
-        </div>
-      </div>
-    </div>
-
-    <div id="alertWarning" class="warning-notification">
-      <div class="col-sm-12">
-        <div
-          class="alert fade alert-simple alert-warning alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
-          role="alert"
-          data-brk-library="component__alert"
-        >
-          <a
-            class="close font__size-18"
-            data-dismiss="alert"
-            id="closeAlertWarning"
-          >
-            <span aria-hidden="true">
-              <i class="fa fa-times warning"></i>
-            </span>
-            <span class="sr-only">Close</span>
-          </a>
-          <i
-            class="start-icon fa fa-exclamation-triangle faa-flash animated"
-          ></i>
-          <strong class="font__weight-semibold"></strong>
-        </div>
-      </div>
-    </div>
-
-    <div id="errorWarning" class="warning-notification">
-      <div class="col-sm-12">
-        <div
-          class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
-          role="alert"
-          data-brk-library="component__alert"
-        >
-          <a
-            class="close font__size-18"
-            data-dismiss="alert"
-            id="closeErrorWarning"
-          >
-            <span aria-hidden="true">
-              <i class="fa fa-times danger"></i>
-            </span>
-            <span class="sr-only">Close</span>
-          </a>
-          <i class="start-icon far fa-times-circle faa-pulse"></i>
-          <strong class="font__weight-semibold"></strong>
-        </div>
-      </div>
-    </div>
-
-      <div class="loading-container">
-        <!-- Loading animation container -->
-        <div class="loading">
-          <!-- We make this div spin -->
-          <div class="spinner">
-            <!-- Mask of the quarter of circle -->
-            <div class="mask">
-              <!-- Inner masked circle -->
-              <div class="maskedCircle"></div>
+      </a>
+      <div id="successfulWarning" class="warning-notification">
+         <div class="col-sm-12">
+            <div
+               class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+               >
+               <a
+                  class="close font__size-18"
+                  data-dismiss="alert"
+                  id="closeSuccessfulWarning"
+                  >
+               <span aria-hidden="true">
+               <i class="fa fa-times greencross"></i>
+               </span>
+               <span class="sr-only">Close</span>
+               </a>
+               <i class="start-icon far fa-check-circle faa-tada"></i>
+               <strong class="font__weight-semibold"></strong>
             </div>
-          </div>
-        </div>
-        <div class="spinline"></div>
-        <div class="spinline2"></div>
-        <div class="spinline3"></div>
+         </div>
       </div>
-
-    <div class="chat-container">
-      <div id="history">
-        <div id="messageIndex0" class="messageGroup">
-          <div
-            id="aiMessage"
-            style="
-              display: flex;
-              animation: 0.5s ease-in-out 0s 1 normal forwards running fadeIn;
-            "
-          >
-            <p>Olá, eu sou Stella. Como posso ajudar?</p>
-          </div>
-          <div id="aiProfile"></div>
-        </div>
+      <div id="infoWarning" class="warning-notification">
+         <div class="col-sm-12">
+            <div
+               class="alert fade alert-simple alert-info alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+               role="alert"
+               data-brk-library="component__alert"
+               >
+               <a
+                  class="close font__size-18"
+                  data-dismiss="alert"
+                  id="closeInfoWarning"
+                  >
+               <span aria-hidden="true">
+               <i class="fa fa-times blue-cross"></i>
+               </span>
+               <span class="sr-only">Close</span>
+               </a>
+               <i class="start-icon fa fa-info-circle faa-shake"></i>
+               <strong class="font__weight-semibold"></strong>
+            </div>
+         </div>
       </div>
-    </div>
-
-    <div id="overlay" class="overlay"></div>
-    <div id="overlay2" class="overlay"></div>
-
-    <div id="settingsModal" class="modals">
-      <h1 id="settingsTitle">Configurações</h1>
-      <div id="closeSettingsModal">
-        <span aria-hidden="true"
-          ><a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-x"
-              viewBox="0 0 16 16"
+      <div id="alertWarning" class="warning-notification">
+         <div class="col-sm-12">
+            <div
+               class="alert fade alert-simple alert-warning alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+               role="alert"
+               data-brk-library="component__alert"
+               >
+               <a
+                  class="close font__size-18"
+                  data-dismiss="alert"
+                  id="closeAlertWarning"
+                  >
+               <span aria-hidden="true">
+               <i class="fa fa-times warning"></i>
+               </span>
+               <span class="sr-only">Close</span>
+               </a>
+               <i
+                  class="start-icon fa fa-exclamation-triangle faa-flash animated"
+                  ></i>
+               <strong class="font__weight-semibold"></strong>
+            </div>
+         </div>
+      </div>
+      <div id="errorWarning" class="warning-notification">
+         <div class="col-sm-12">
+            <div
+               class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show"
+               role="alert"
+               data-brk-library="component__alert"
+               >
+               <a
+                  class="close font__size-18"
+                  data-dismiss="alert"
+                  id="closeErrorWarning"
+                  >
+               <span aria-hidden="true">
+               <i class="fa fa-times danger"></i>
+               </span>
+               <span class="sr-only">Close</span>
+               </a>
+               <i class="start-icon far fa-times-circle faa-pulse"></i>
+               <strong class="font__weight-semibold"></strong>
+            </div>
+         </div>
+      </div>
+      <div class="loading-container">
+         <!-- Loading animation container -->
+         <div class="loading">
+            <!-- We make this div spin -->
+            <div class="spinner">
+               <!-- Mask of the quarter of circle -->
+               <div class="mask">
+                  <!-- Inner masked circle -->
+                  <div class="maskedCircle"></div>
+               </div>
+            </div>
+         </div>
+         <div class="spinline"></div>
+         <div class="spinline2"></div>
+         <div class="spinline3"></div>
+      </div>
+      <div class="chat-container">
+         <div id="history">
+            <div id="messageIndex0" class="messageGroup">
+               <div
+                  id="aiMessage"
+                  style="
+                  display: flex;
+                  animation: 0.5s ease-in-out 0s 1 normal forwards running fadeIn;
+                  "
+                  >
+                  <p>Olá, eu sou Stella. Como posso ajudar?</p>
+               </div>
+               <div id="aiProfile"></div>
+            </div>
+         </div>
+      </div>
+      <div id="overlay" class="overlay"></div>
+      <div id="overlay2" class="overlay"></div>
+      <div id="settingsModal" class="modals">
+         <h1 id="settingsTitle">Configurações</h1>
+         <div id="closeSettingsModal">
+            <span aria-hidden="true"
+               >
+               <a>
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     width="16"
+                     height="16"
+                     fill="currentColor"
+                     class="bi bi-x"
+                     viewBox="0 0 16 16"
+                     >
+                     <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                        />
+                  </svg>
+               </a
+                  >
+            </span>
+         </div>
+         <div id="ttsSettings">
+            <div id="ttsSwitch">
+               <div class="checkbox-wrapper-51">
+                  <input
+                     id="cbx-51"
+                     class="ttsCheckbox"
+                     type="checkbox"
+                     onclick="if (this.checked) return false;"
+                     />
+                  <label class="toggle" for="cbx-51">
+                     <span>
+                        <svg viewBox="0 0 10 10" height="10px" width="10px">
+                           <path
+                              d="M5,1 L5,1 C2.790861,1 1,2.790861 1,5 L1,5 C1,7.209139 2.790861,9 5,9 L5,9 C7.209139,9 9,7.209139 9,5 L9,5 C9,2.790861 7.209139,1 5,1 L5,9 L5,1 Z"
+                              ></path>
+                        </svg>
+                     </span>
+                  </label>
+               </div>
+            </div>
+            <div class="ttsSettingsText">
+               <p>TTS (Texto para fala)</p>
+            </div>
+         </div>
+         <a class="btn_" id="clearHistory">Limpar histórico</a>
+      </div>
+      <div id="ttsModalPassword" class="modals">
+         <div id="closePasswordModal">
+            <span aria-hidden="true"
+               >
+               <a>
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     width="16"
+                     height="16"
+                     fill="currentColor"
+                     class="bi bi-x"
+                     viewBox="0 0 16 16"
+                     >
+                     <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                        />
+                  </svg>
+               </a
+                  >
+            </span>
+         </div>
+         <div class="ttsModalPasswordContainer">
+            <p>Senha para desbloquer o TTS:</p>
+            <input type="password" id="ttsPassword" placeholder="Senha" />
+            <a class="btn_" id="confirmPassword">Confirmar</a>
+         </div>
+      </div>
+      <div class="input-container">
+         <a id="submit"
             >
-              <path
-                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-              />
-            </svg> </a
-        ></span>
-      </div>
-      <div id="ttsSettings">
-        <div id="ttsSwitch">
-          <div class="checkbox-wrapper-51">
-            <input
-              id="cbx-51"
-              class="ttsCheckbox"
-              type="checkbox"
-              onclick="if (this.checked) return false;"
-            />
-            <label class="toggle" for="cbx-51">
-              <span>
-                <svg viewBox="0 0 10 10" height="10px" width="10px">
-                  <path
-                    d="M5,1 L5,1 C2.790861,1 1,2.790861 1,5 L1,5 C1,7.209139 2.790861,9 5,9 L5,9 C7.209139,9 9,7.209139 9,5 L9,5 C9,2.790861 7.209139,1 5,1 L5,9 L5,1 Z"
-                  ></path>
-                </svg>
-              </span>
-            </label>
-          </div>
-        </div>
-        <div class="ttsSettingsText">
-          <p>TTS (Texto para fala)</p>
-        </div>
-      </div>
-      <a class="btn_" id="clearHistory">Limpar histórico</a>
-    </div>
-
-    <div id="ttsModalPassword" class="modals">
-      <div id="closePasswordModal">
-        <span aria-hidden="true"
-          ><a>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-x"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-              />
-            </svg> </a
-        ></span>
+               xmlns="http://www.w3.org/2000/svg"
+               width="100%"
+               height="100%"
+               viewBox="0 0 1024 1024"
+               version="1.1"
+               >
+               <path
+                  d="M 490 141.007 C 381.309 147.054, 280.301 201.548, 214.276 289.762 C 181.092 334.099, 157.154 388.033, 147.073 441.178 C 138.551 486.104, 138.371 536.339, 146.573 580.888 C 159.421 650.672, 194.997 719.002, 245.487 770.868 C 320.426 847.849, 424.560 888.810, 530.664 883.043 C 583.011 880.197, 626.342 869.272, 671.836 847.449 C 785.776 792.792, 864.153 685.043, 880.461 560.640 C 885.333 523.472, 884.211 479.972, 877.428 443.112 C 864.567 373.214, 828.875 304.771, 778.205 252.841 C 702.569 175.324, 598.567 134.968, 490 141.007 M 483 172.129 C 399.114 178.308, 326.074 212.717, 266.493 274.125 C 215.312 326.874, 185.374 386.922, 175.069 457.500 C 164.341 530.973, 175.326 604.857, 206.099 666.202 C 237.159 728.117, 294.060 785.381, 355.800 816.857 C 391.769 835.195, 429.396 846.167, 473.500 851.180 C 487.791 852.804, 536.209 852.804, 550.500 851.180 C 629.918 842.153, 693.351 812.351, 749.875 757.507 C 802.924 706.036, 835.441 645.507, 847.450 575.878 C 851.564 552.023, 852.430 540.915, 852.430 512 C 852.430 483.085, 851.564 471.977, 847.450 448.122 C 835.967 381.540, 806.234 324.151, 757.051 273.636 C 704.237 219.392, 641.595 186.611, 569.679 175.583 C 541.330 171.236, 511.346 170.041, 483 172.129 M 435.237 478.263 L 358.979 554.526 366.739 562.035 C 371.008 566.165, 375.976 570.869, 377.781 572.489 L 381.061 575.433 446.531 509.969 L 512 444.506 577.474 509.974 L 642.948 575.443 646.724 571.988 C 648.801 570.088, 653.768 565.382, 657.761 561.530 L 665.023 554.528 588.764 478.264 C 546.821 436.319, 512.278 402, 512 402 C 511.722 402, 477.179 436.318, 435.237 478.263"
+                  stroke="none"
+                  fill="white"
+                  fill-rule="evenodd"
+                  />
+            </svg
+               >
+         </a>
+         <div
+            contenteditable="true"
+            enterkeyhint="send"
+            id="input"
+            placeholder="Pergunte me qualquer coisa"
+            ></div>
       </div>
-      <div class="ttsModalPasswordContainer">
-        <p>Senha para desbloquer o TTS:</p>
-        <input type="password" id="ttsPassword" placeholder="Senha" />
-        <a class="btn_" id="confirmPassword">Confirmar</a>
-      </div>
-    </div>
-
-    <div class="input-container">
-      <a id="submit"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          viewBox="0 0 1024 1024"
-          version="1.1"
-        >
-          <path
-            d="M 490 141.007 C 381.309 147.054, 280.301 201.548, 214.276 289.762 C 181.092 334.099, 157.154 388.033, 147.073 441.178 C 138.551 486.104, 138.371 536.339, 146.573 580.888 C 159.421 650.672, 194.997 719.002, 245.487 770.868 C 320.426 847.849, 424.560 888.810, 530.664 883.043 C 583.011 880.197, 626.342 869.272, 671.836 847.449 C 785.776 792.792, 864.153 685.043, 880.461 560.640 C 885.333 523.472, 884.211 479.972, 877.428 443.112 C 864.567 373.214, 828.875 304.771, 778.205 252.841 C 702.569 175.324, 598.567 134.968, 490 141.007 M 483 172.129 C 399.114 178.308, 326.074 212.717, 266.493 274.125 C 215.312 326.874, 185.374 386.922, 175.069 457.500 C 164.341 530.973, 175.326 604.857, 206.099 666.202 C 237.159 728.117, 294.060 785.381, 355.800 816.857 C 391.769 835.195, 429.396 846.167, 473.500 851.180 C 487.791 852.804, 536.209 852.804, 550.500 851.180 C 629.918 842.153, 693.351 812.351, 749.875 757.507 C 802.924 706.036, 835.441 645.507, 847.450 575.878 C 851.564 552.023, 852.430 540.915, 852.430 512 C 852.430 483.085, 851.564 471.977, 847.450 448.122 C 835.967 381.540, 806.234 324.151, 757.051 273.636 C 704.237 219.392, 641.595 186.611, 569.679 175.583 C 541.330 171.236, 511.346 170.041, 483 172.129 M 435.237 478.263 L 358.979 554.526 366.739 562.035 C 371.008 566.165, 375.976 570.869, 377.781 572.489 L 381.061 575.433 446.531 509.969 L 512 444.506 577.474 509.974 L 642.948 575.443 646.724 571.988 C 648.801 570.088, 653.768 565.382, 657.761 561.530 L 665.023 554.528 588.764 478.264 C 546.821 436.319, 512.278 402, 512 402 C 511.722 402, 477.179 436.318, 435.237 478.263"
-            stroke="none"
-            fill="white"
-            fill-rule="evenodd"
-          /></svg
-      ></a>
-      <div
-        contenteditable="true"
-        enterkeyhint="send"
-        id="input"
-        placeholder="Pergunte me qualquer coisa"
-      ></div>
-    </div>
-
-    <script type="module" src="./index.js"></script>
-    <script type="module" src="module.js"></script>
-  </body>
+      <script type="module" src="./index.js"></script>
+      <script type="module" src="module.js"></script>
+   </body>
 </html>
