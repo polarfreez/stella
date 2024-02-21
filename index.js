@@ -22,7 +22,21 @@ if (hash === "config") {
   settingsModal(true);
 }
 
+function submitButtonColor() {
+	const submitButton = document.querySelector("#submit");
+	const inputField = document.querySelector("#input");
+
+	if (inputField.textContent.trim() == ""){
+		submitButton.style.pointerEvents = "none";
+		submitButton.style.fillColor = "gray !important";
+	}else {
+		submitButton.style.pointerEvents = "";
+		submitButton.style.fillColor = "white !important";
+	}
+}
+
 function inputDivDynamic(){
+  submitButtonColor();
   const inputDiv = document.querySelector("#input");
 
   // Get all child nodes of inputDiv
@@ -500,15 +514,4 @@ function remHash() {
 }
 
 
-function submitColor() {
-	const submitButton = document.querySelector("#submit");
-	const inputField = document.querySelector("#input");
 
-	if (inputField.textContent.trim() == ""){
-		submitButton.style.pointerEvents = "none";
-		submitButton.style.fillColor = "gray !important";
-	}else {
-		submitButton.style.pointerEvents = "";
-		submitButton.style.fillColor = "white !important";
-	}
-}
