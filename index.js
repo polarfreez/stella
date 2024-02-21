@@ -24,14 +24,15 @@ if (hash === "config") {
 
 function submitButtonColor() {
 	const submitButton = document.querySelector("#submit");
+	const submitButtonSVG = submitButton.querySelector("svg");
 	const inputField = document.querySelector("#input");
 
 	if (inputField.textContent.trim() == ""){
-		submitButton.style.pointerEvents = "none";
-		submitButton.style.fillColor = "gray !important";
+		submitButton.style.pointerEvents = "none";		
+		submitButtonSVG.style.fillColor = "gray !important";
 	}else {
 		submitButton.style.pointerEvents = "";
-		submitButton.style.fillColor = "white !important";
+		submitButtonSVG.style.fillColor = "white !important";
 	}
 }
 
