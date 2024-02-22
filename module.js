@@ -238,7 +238,7 @@ async function run(rawInput, password) {
         // Check if there is a match
         if (emailContent) {
           // Replace any occurrences of '\n' with actual line breaks
-          const formattedEmailContent = emailContent.replace(/\\n/g, "\n");
+          const formattedEmailContent = emailContent.map(content => content.replace(/\\n/g, "\n"));
 
           // Call the sendEmail function with the formatted content
           sendEmail(formattedEmailContent);
