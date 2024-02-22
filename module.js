@@ -167,6 +167,10 @@ async function run(rawInput, password) {
         historyMessageGroup.appendChild(gen);
         historyMessageGroup.appendChild(aiProfileElement);
 
+        if(gen.textContent.includes("END_OF_DIALOG")){
+          gen.textContent = gen.textContent.replace("END_OF_DIALOG","");
+        }
+
         // check if gen has any pre elements
         if (gen.querySelectorAll("pre").length > 0) {
           // get all the pre elements in gen
