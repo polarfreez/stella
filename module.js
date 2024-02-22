@@ -237,19 +237,22 @@ async function run(rawInput, password) {
         }
 
         // Extract the email content using a regular expression
-        const emailContent = gen.textContent.match(/sendEmail\("([^"]+)"\)/g);
-        console.log(emailContent);
-
-        // Check if there is a match
-        if (emailContent) {
-          // Replace any occurrences of '\n' with actual line breaks
-          const formattedEmailContent = emailContent.map(content => content.replace(/\\n/g, "\n"));
+        const emailContentRegex = /sendEmail\("([^"]+)"\)/g;
+        const emailContentMatches = gen.textContent.match(emailContentRegex);
+        
+        console.log(emailContentMatches);
+        
+        // Check if there are matches
+        if (emailContentMatches) {
+          // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
+          const formattedEmailContent = emailContentMatches.map(match => match.replace(/\\n/g, "\n"));
           console.log(formattedEmailContent);
-
-          // Call the sendEmail function with the formatted content
-          //sendEmail(formattedEmailContent);
-
-          gen.textContent = gen.textContent.replace(/sendEmail\([^)]*\)/g, "");
+        
+          // Agora você pode fazer o que quiser com o conteúdo extraído
+          // sendEmail(formattedEmailContent);
+        
+          // Se você quiser remover as chamadas de sendEmail do texto original
+          gen.textContent = gen.textContent.replace(emailContentRegex, "");
         }
 
         setTimeout(() => {
