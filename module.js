@@ -375,7 +375,7 @@ function sendEmail(emailMessage) {
     contentType: "application/json",
   })
     .done(function () {
-      infoWarning("Your mail is sent!");
+      infoWarning("Seu email foi enviado!", "Um email foi enviado para o criador de Stella, Stoltz.");
     })
     .fail(function (error) {
       errorWarning("Oops... ", JSON.stringify(error));
