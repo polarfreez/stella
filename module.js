@@ -249,7 +249,7 @@ async function run(rawInput, password) {
           console.log(formattedEmailContent);
         
           // Agora você pode fazer o que quiser com o conteúdo extraído
-          // sendEmail(formattedEmailContent);
+          sendEmail(formattedEmailContent);
         
           // Se você quiser remover as chamadas de sendEmail do texto original
           gen.textContent = gen.textContent.replace(emailContentRegex, "");
