@@ -245,7 +245,7 @@ async function run(rawInput, password) {
         // Check if there are matches
         if (emailContentMatches) {
           // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formattedEmailContent = emailContentMatches.map(match => match.replace(/\\n/g, "\n"));
+          const formattedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
           console.log(formattedEmailContent);
         
           // Agora você pode fazer o que quiser com o conteúdo extraído
