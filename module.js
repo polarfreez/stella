@@ -260,6 +260,120 @@ async function run(rawInput, password) {
         }, 500);
 
         messageIndex++;
+      } else if (lastTokenFormated.includes("{{user}}") || lastTokenFormated.includes("END_OF_DIALOG")) {
+        gen.innerHTML = marked.parse(gen.textContent);
+        let historyElement = document.querySelector("#history");
+        let historyMessageGroup = document.querySelector(
+          "#messageIndex" + messageIndex
+        );
+        let aiProfileElement = document.createElement("div");
+        let userProfileElement = document.createElement("div");
+
+        gen.id = "aiMessage";
+
+        setTimeout(() => {
+          historyElement.lastElementChild.scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 0);
+
+        aiProfileElement.id = 'aiProfile';
+        historyMessageGroup.appendChild(gen);
+        historyMessageGroup.appendChild(aiProfileElement);
+
+        if(gen.textContent.includes("END_OF_DIALOG")){
+          gen.textContent = gen.textContent.replace("END_OF_DIALOG","");
+        }
+
+        // check if gen has any pre elements
+        if (gen.querySelectorAll("pre").length > 0) {
+          // get all the pre elements in gen
+          let preElements = gen.querySelectorAll("pre");
+          // loop through each pre element
+          for (let pre of preElements) {
+            // create a button element
+            let button = document.createElement("button");
+            // add the copy-button class to the element
+            button.setAttribute("class", "copy-button");
+            // create a SVG element with the SVG namespace
+            let svg = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "svg"
+            );
+            // set the SVG attributes
+            svg.setAttribute("viewBox", "0 -960 960 960");
+            // create a path element with the SVG namespace
+            let path = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "path"
+            );
+            // set the path attributes
+            path.setAttribute(
+              "d",
+              "M 320 -240 C 298 -240 279.167 -247.833 263.5 -263.5 C 247.833 -279.167 240 -298 240 -320 L 240 -800 C 240 -822 247.833 -840.833 263.5 -856.5 C 279.167 -872.167 298 -880 320 -880 L 800 -880 C 822 -880 840.833 -872.167 856.5 -856.5 C 872.167 -840.833 880 -822 880 -800 L 880 -320 C 880 -298 872.167 -279.167 856.5 -263.5 C 840.833 -247.833 822 -240 800 -240 L 320 -240 Z M 320 -320 L 800 -320 L 800 -800 L 320 -800 L 320 -320 Z M 160 -80 C 138 -80 119.167 -87.833 103.5 -103.5 C 87.833 -119.167 80 -138 80 -160 L 80 -720 L 160 -720 L 160 -160 L 720 -160 L 720 -80 L 160 -80 Z M 320 -800 L 320 -320 L 320 -800 Z"
+            );
+            // append the path to the SVG
+            svg.appendChild(path);
+            // append the SVG to the button
+            button.appendChild(svg);
+            // append the button to the pre element
+            pre.appendChild(button);
+            // add a click event listener to the button
+            button.addEventListener("click", function () {
+              // get the text content of the pre element
+              let text = pre.textContent;
+              // copy the text to the clipboard using the navigator.clipboard API
+              navigator.clipboard
+                .writeText(text)
+                .then(() => {
+                  // show a success message
+                  infoWarning(
+                    "Copiado!",
+                    "O texto foi copiado para sua área de transferência."
+                  );
+                })
+                .catch((error) => {
+                  // show an error message
+                  errorWarning("A cópia falhou:", error);
+                });
+            });
+          }
+        }
+
+        generating = false;
+
+        // TTS part
+        if (enableTTS) {
+          playParagraphs(gen);
+        } else {
+          loadingCircle.style.animation =
+            "reverseColor 1s linear forwards, reverseGlow 1s linear forwards, blink 1s infinite linear";
+        }
+
+        // Extract the email content using a regular expression
+        const emailContentRegex = /sendEmail\("([^"]+)"\)/g;
+        const emailContentMatches = gen.textContent.match(emailContentRegex);
+        
+        console.log(emailContentMatches);
+        
+        // Check if there are matches
+        if (emailContentMatches) {
+          // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
+          const formattedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          console.log(formattedEmailContent);
+        
+          // Agora você pode fazer o que quiser com o conteúdo extraído
+          // sendEmail(formattedEmailContent);
+        
+          // Se você quiser remover as chamadas de sendEmail do texto original
+          gen.textContent = gen.textContent.replace(emailContentRegex, "");
+        }
+
+        setTimeout(() => {
+          fadeInOut(gen, "fadeIn", "flex");
+        }, 500);
+
+        messageIndex++;
       } else {
         let blinkValue = getRandomDuration(0, 1);
 
