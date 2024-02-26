@@ -1006,10 +1006,12 @@ pre {
 #submit {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  fill: rgb(42, 55, 74);
 }
 
-#submit:hover {
+#submit:hover, #submit svg {
   transform: scale(1.1);
+  fill: linear-gradient(133.61deg,#a87ffb 17.33%,#25a6e9 100.47%);
 }
 
 #submit svg {
