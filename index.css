@@ -931,7 +931,6 @@ pre {
 }
 
 #aiProfile {
-  align-self; flex-start;
   background: url(./images/stella.jpg);
   content: "";
   width: 48px;
