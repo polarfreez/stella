@@ -84,7 +84,7 @@ async function* textStreamRes(hf, controller, input) {
     {
       model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
       inputs: input,
-      parameters: { max_new_tokens: 1000 },
+      parameters: { max_new_tokens: 2048 },
     },
     {
       use_cache: false,
