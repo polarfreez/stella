@@ -1,4 +1,4 @@
-$(document).ready(function () {  
+//$(document).ready(function () {  
   // Get the container element
   const background = document.getElementById("background");
   
