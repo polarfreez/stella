@@ -436,22 +436,43 @@ p {
   margin: 10px 0;
   padding: 10px;
   border-radius: 3px 3px 3px 3px;
+  transition: all 0.5s ease;
 }
+
 .info-msg {
+  border: 1px solid rgba(6, 44, 241, 0.46)
   color: #0396ff;
   background-color: rgba(7, 73, 149, 0.16);
 }
+.info-msg:hover {
+  background-color: rgba(7, 73, 149, 0.35);
+}
+
 .success-msg {
+  border: 1px solid rgba(36, 241, 6, 0.46);
   color: #0ad406;
   background-color: rgba(7, 149, 66, 0.16);
 }
+.success-msg:hover {
+  background-color: rgba(7, 149, 66, 0.35);
+}
+
 .warning-msg {
+  border: 1px solid rgba(241, 142, 6, 0.81);
   color: #ffb103;
   background-color: rgba(220, 128, 1, 0.16);
 }
+.warning-msg:hover {
+  background-color: rgba(220, 128, 1, 0.33);
+}
+
 .error-msg {
+  border: 1px solid rgba(241, 6, 6, 0.81);
   color: #ff0303;
   background-color: rgba(220, 17, 1, 0.16);
+}
+.error-msg:hover {
+   background-color: rgba(220, 17, 1, 0.33);
 }
 
 #closePasswordModal {
