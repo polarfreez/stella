@@ -65,23 +65,16 @@ strong,
 }
 
 #input {
-  border: 2px solid rgb(242, 242, 242);
-  caret-color: rgb(242, 242, 242);
-  color: rgb(242, 242, 242) !important;
-  -webkit-animation: inputVisibilityB 0.8s infinite alternate;
-  animation: inputVisibilityB 0.8s infinite alternate;
-  background: rgba(0, 0, 0, 0.263);
+  border: 2px solid rgb(42, 55, 74);
+  caret-color: white;
+  color: white !important;
+  background: rgba(22, 30, 41, 0.3);
   bottom: 32px;
   font-weight: 320;
   min-height: 32px;
   outline: none;
   padding-inline: 8px;
   padding-top: 6px;
-  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s,
-    -webkit-transform 0.3s;
-  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s;
-  transition: border-color 0.1s, color 0.1s, text-shadow 0.1s, transform 0.3s,
-    -webkit-transform 0.3s;
   width: 240px;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
@@ -102,7 +95,14 @@ strong,
 }
 
 #input:focus {
-  width: 400px;
+  border: 2px solid; /* Set your border width */
+  border-image: linear-gradient(133.61deg, #a87ffb 17.33%, #25a6e9 100.47%);
+  border-image-slice: 1; /* Ensures the entire border is covered by the gradient */
+}
+
+#input::after {
+  background-image: linear-gradient(133.61deg, #a87ffb 17.33%, #25a6e9 100.47%);
+  filter: blur(10px);
 }
 
 /* Animation keyframes - you need to add prefixes */
