@@ -265,14 +265,26 @@ function createWarningElement(id, iconClass, msgClass) {
   div.id = id;
   div.className = msgClass;
 
+  var closeBtn = document.createElement("span");
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  closeBtn.className = "close-btn";
+  closeBtn.onclick = function() {
+    div.style.animation = "fadeOut 0.5s ease-in-out forwards";
+    setTimeout(() => {
+      div.style.display = 'none';
+      document.querySelector("#messageContainer").removeChild(div);
+    }, 500);
+  };
+  div.appendChild(closeBtn);
+
   var i = document.createElement("i");
   i.className = iconClass;
   div.appendChild(i);
 
   var strong = document.createElement("strong");
-	var p = document.createElement("p");
+  var p = document.createElement("p");
   div.appendChild(strong);
-	div.appendChild(p);
+  div.appendChild(p);
 
   return div;
 }
