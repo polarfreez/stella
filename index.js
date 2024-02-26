@@ -270,7 +270,9 @@ function createWarningElement(id, iconClass, msgClass) {
   div.appendChild(i);
 
   var strong = document.createElement("strong");
+	var p = document.createElement("p");
   div.appendChild(strong);
+	div.appendChild(p);
 
   return div;
 }
@@ -298,8 +300,10 @@ export function errorWarning(boldText, text){
 function displayWarning(warning, boldText, text){
   var container = document.querySelector("#messageContainer");
   var bold = warning.querySelector("strong");
+	var normal = warning.querySelector("p");
   var fadeSpeed = 5000;
-  bold.textContent = boldText + ' ' + text;
+  bold.textContent = boldText;
+	normal.textContent = ' ' + text;
   warning.style.opacity = '0';
   container.appendChild(warning);
   warning.style.display = 'block';
