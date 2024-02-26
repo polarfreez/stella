@@ -54,17 +54,6 @@ function inputDivDynamic(){
   }
 }
 
-
-let allEditableDivs = document.querySelectorAll('div[contenteditable="true"]');
-
-[].forEach.call(allEditableDivs, function (el) {
-  el.addEventListener('paste', function(e) {
-    e.preventDefault();
-    var text = e.clipboardData.getData("text/plain");
-    document.execCommand("insertHTML", false, text);
-  }, false);
-});
-
 $("#input").on("focus", inputDivDynamic);
 $("#input").on("blur", inputDivDynamic);
 
@@ -444,7 +433,7 @@ jQuery( document).ready(function($){
 		copyid++;
 		$(this).attr( 'data-copyid', copyid).wrap( '<div class="pre-wrapper"/>');
 		$(this).parent().css( 'margin', $(this).css( 'margin') );
-		$('<button class="copy-snippet">Copiar</button>').insertAfter( $(this) ).data( 'copytarget',copyid );
+		$('<button class="copy-snippet">Copy</button>').insertAfter( $(this) ).data( 'copytarget',copyid );
 	});
 
 	$('body').on( 'click', '.copy-snippet', function(ev){
