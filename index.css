@@ -69,13 +69,12 @@ strong,
   caret-color: white;
   color: white !important;
   background: rgba(22, 30, 41, 0.3);
-  bottom: 32px;
   font-weight: 320;
   min-height: 32px;
   outline: none;
   padding-inline: 8px;
   padding-top: 6px;
-  width: 240px;
+  width: 480px;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
   overflow: hidden;
@@ -83,6 +82,7 @@ strong,
   resize: none;
   padding-bottom: 10px;
   backdrop-filter: blur(2px);
+  align-self: center;
 }
 
 #input span {
@@ -349,11 +349,13 @@ p {
   margin-bottom: 10px !important;
 }
 
-@media (max-width: 800px) {
-  #input:focus {
+@media (max-width: 600px) {
+    #input {
     width: 240px;
   }
+}
 
+@media (max-width: 768px) {
   #settingsModal {
     width: 350px !important;
   }
