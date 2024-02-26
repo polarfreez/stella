@@ -874,13 +874,17 @@ pre {
 }
 
 #submit {
-  width: 600px;
-  height: 600px;
-  background-color: black;
+  width: 45px;
+  height: auto;
   border-radius: 50%;
   position: relative;
   margin: 20px;
   transition: all 0.5s ease;
+}
+
+#submit svg {
+  width: 100%;
+  height: 100%;
 }
 
 #submit::after {
@@ -892,7 +896,7 @@ pre {
   position: absolute;
   content: '';
   border-radius: 50%;
-  filter: blur(30px);
+  filter: blur(8px);
   background-image: linear-gradient(133.61deg,#a87ffb 17.33%,#25a6e9 100.47%);
   z-index: -1; 
   transition: all 0.5s ease;
