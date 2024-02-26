@@ -14,6 +14,8 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background: rgb(16, 21, 29);
+  background-image: radial-gradient(500px 200px at 50% 0, #131f33 20%, rgba(19, 30, 49, 0) 100%);
 }
 
 a {
@@ -965,12 +967,12 @@ pre {
   height: 11px;
   line-height: 0;
   border-radius: 11px;
-  background-color: #0d0a1c;
-  border: solid 2px #4f4789;
+  background-color: #141824;
+  border: solid 2px #8969CD;
   position: relative;
   display: block;
-  color: #0d0a1c;
-  -webkit-text-stroke: 2px #4f4789;
+  color: #141824;
+  -webkit-text-stroke: 2px #8969CD;
   font-family: system-ui;
   text-align: left;
   font-size: 70px;
