@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 
 body *:not(#background *, .loading-container *) {
   animation: fadeIn 0.5s ease-in-out;
