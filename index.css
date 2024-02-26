@@ -432,8 +432,8 @@ p {
 .error-msg {
   display: flex;
   position: fixed;
-  top: 10;
-  right: 10;
+  margin: 20;
+  right: 0;
   margin: 10px 0;
   padding: 10px;
   border-radius: 3px 3px 3px 3px;
