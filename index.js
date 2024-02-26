@@ -270,7 +270,7 @@ export function successfulWarning(boldText, text){
     var bold = warning.querySelector("strong");
     var normalText = warning.querySelector(".alert").lastChild;
     var fadeSpeed = 5000;
-    normalText.innerHTML = '<p> ' + text + '</p>';
+    normalText.textContent = ' ' + text;
     bold.textContent = boldText;
     warning.style.opacity = '0';
     warning.style.display = 'block';
@@ -301,7 +301,7 @@ export function infoWarning(boldText, text){
   var bold = warning.querySelector("strong");
   var normalText = warning.querySelector(".alert").lastChild;
   var fadeSpeed = 5000;
-    normalText.innerHTML = '<p> ' + text + '</p>';
+    normalText.textContent = ' ' + text;
   bold.textContent = boldText;
   warning.style.opacity = '0';
   warning.style.display = 'block';
@@ -332,7 +332,7 @@ export function alertWarning(boldText, text){
   var bold = warning.querySelector("strong");
   var normalText = warning.querySelector(".alert").lastChild;
   var fadeSpeed = 5000;
-    normalText.innerHTML = '<p> ' + text + '</p>';
+  normalText.textContent = ' ' + text;
   bold.textContent = boldText;
   warning.style.opacity = '0';
   warning.style.display = 'block';
@@ -363,7 +363,7 @@ export function errorWarning(boldText, text){
   var bold = warning.querySelector("strong");
   var normalText = warning.querySelector(".alert").lastChild;
   var fadeSpeed = 5000;
-    normalText.innerHTML = '<p> ' + text + '</p>';
+  normalText.textContent = ' ' + text;
   bold.textContent = boldText;
   warning.style.opacity = '0';
   warning.style.display = 'block';
