@@ -430,6 +430,7 @@ p {
 .success-msg,
 .warning-msg,
 .error-msg {
+  display: flex;
   position: fixed;
   top: 10;
   right: 10;
@@ -473,6 +474,13 @@ p {
 }
 .error-msg:hover {
    background-color: rgba(220, 17, 1, 0.33);
+}
+
+#messageContainer i, #messageContainer strong, #messageContainer p {
+    padding-inline: 5px;
+    align-self: center;
+    text-align: center;
+    margin: 0 !important;
 }
 
 #closePasswordModal {
