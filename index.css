@@ -449,6 +449,9 @@ p {
 .info-msg:hover {
   background-color: rgba(7, 73, 149, 0.35);
 }
+.info-msg .close-btn {
+    color: #0396ff;
+}
 
 .success-msg {
   border: 1px solid rgba(36, 241, 6, 0.46);
@@ -457,6 +460,9 @@ p {
 }
 .success-msg:hover {
   background-color: rgba(7, 149, 66, 0.35);
+}
+.success-msg .close-btn {
+  color: #0ad406;
 }
 
 .warning-msg {
@@ -467,6 +473,9 @@ p {
 .warning-msg:hover {
   background-color: rgba(220, 128, 1, 0.33);
 }
+.warning-msg .close-btn {
+  color: #ffb103;
+}
 
 .error-msg {
   border: 1px solid rgba(241, 6, 6, 0.81);
@@ -475,6 +484,9 @@ p {
 }
 .error-msg:hover {
    background-color: rgba(220, 17, 1, 0.33);
+}
+.error-msg .close-btn {
+  color: #ff0303;
 }
 
 #messageContainer i, #messageContainer strong, #messageContainer p {
