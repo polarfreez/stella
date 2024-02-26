@@ -909,11 +909,15 @@ pre {
 #aiMessage {
   align-self: flex-start;
   margin-right: 30%;
+  background-color: #141824;
+  border: solid 1px #8969CD;
 }
 
 #userMessage {
   align-self: flex-end;
   margin-left: 30%;
+  background-color: #10151D;
+  border: solid 1px #232E3F;
 }
 
 .messageGroup {
@@ -925,8 +929,6 @@ pre {
 #aiMessage {
   min-width: 10rem;
   max-width: 75%;
-  background-color: #0d0a1c;
-  border: solid 1px #4f4789;
   padding: 8px;
   margin-bottom: 8px;
   flex-direction: column;
@@ -988,12 +990,12 @@ pre {
   height: 11px;
   line-height: 0;
   border-radius: 11px;
-  background-color: #0d0a1c;
-  border: solid 2px #4f4789;
+  background-color: #10151D;
+  border: solid 2px #232E3F;
   position: absolute;
   display: block;
-  color: #0d0a1c;
-  -webkit-text-stroke: 2px #4f4789;
+  color: #10151D;
+  -webkit-text-stroke: 2px #232E3F;
   font-family: system-ui;
   text-align: right;
   font-size: 70px;
