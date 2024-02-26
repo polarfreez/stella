@@ -306,7 +306,7 @@ function displayWarning(warning, boldText, text){
 	normal.textContent = ' ' + text;
   warning.style.opacity = '0';
   container.appendChild(warning);
-  warning.style.display = 'block';
+  warning.style.display = 'flex';
   warning.style.animation = "fadeIn 0.5s ease-in-out forwards";
   warning.style.opacity = '1';
 
