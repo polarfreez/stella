@@ -687,8 +687,8 @@ p {
 }
 
 .modals {
-  background-color: #0d0a1c;
-  border: solid 1px #4f4789;
+  background-color: #10151D;
+  border: solid 1px #232E3F;
 }
 
 [contenteditable="true"]:empty:before {
