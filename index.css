@@ -629,9 +629,9 @@ p {
 .btn_ {
   font-size: 14px;
   color: #fff;
-  background-color: #ffffff00;
+  background-color: #10151D;
   padding: 10px 30px;
-  border: 2px solid #ffffff;
+  border: solid 1px #232E3F;
   border-radius: 1px;
   transition: all 0.2s ease-in-out;
   display: flex;
@@ -645,17 +645,9 @@ p {
 .btn_:hover {
   transition: all 0.2s ease-in-out;
   padding: 10px 30px;
-  background-color: #ffffff00;
+  background-color: #141824;
   color: #ffffff;
-  border: solid 2px #7b00ff;
-}
-
-.btn_:active {
-  transition: all 0.2s ease-in-out;
-  padding: 10px 30px;
-  background-color: #ffffff00;
-  color: #ffffff;
-  border: solid 2px #7b00ff;
+  border: solid 1px #8969CD;
 }
 
 #clearHistory {
@@ -889,7 +881,7 @@ pre {
 
 #submit:hover, #submit svg {
   transform: scale(1.1);
-  fill: linear-gradient(133.61deg,#a87ffb 17.33%,#25a6e9 100.47%);
+  color: linear-gradient(133.61deg,#a87ffb 17.33%,#25a6e9 100.47%);
 }
 
 #submit svg {
