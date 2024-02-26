@@ -1,4 +1,4 @@
-import { backgroundAnimation }
+import { backgroundAnimation } from "/js/ai-background.js"
 
 export let enableTTS = false;
 
