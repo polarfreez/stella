@@ -1,7 +1,10 @@
+import { backgroundAnimation }
+
 export let enableTTS = false;
 
 // Marked
 window.onload = function(){
+  backgroundAnimation();
   const chat_message = document.querySelector("#message");
   chat_message.innerHTML = marked.parse(chat_message.textContent);
 
