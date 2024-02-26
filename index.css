@@ -442,7 +442,7 @@ p {
 }
 
 .info-msg {
-  border: 1px solid rgba(6, 44, 241, 0.46)
+  border: 1px solid rgba(6, 44, 241, 0.46);
   color: #0396ff;
   background-color: rgba(7, 73, 149, 0.16);
 }
