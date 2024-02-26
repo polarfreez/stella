@@ -260,231 +260,59 @@ export function tts(text, enable, password) {
 }
 
 
-
-
-
-
-
-// Create a function that takes the id, class, icon, and text of the warning element as parameters
-function createWarningElement(id, className, icon, text) {
-  // Create a div element and assign it the id and class
-  let div = document.createElement("div");
+function createWarningElement(id, iconClass, msgClass) {
+  var div = document.createElement("div");
   div.id = id;
-  div.className = className;
+  div.className = msgClass;
 
-  // Create an i element and assign it the icon class
-  let i = document.createElement("i");
-  i.className = icon;
-
-  // Create a strong element and assign it the text
-  let strong = document.createElement("strong");
-  strong.textContent = text;
-
-  // Append the i and strong elements to the div element
+  var i = document.createElement("i");
+  i.className = iconClass;
   div.appendChild(i);
+
+  var strong = document.createElement("strong");
   div.appendChild(strong);
 
-  // Return the div element
   return div;
 }
 
-// Modify the successfulWarning function to create and append the warning element
-export function successfulWarning(boldText, text) {
-  // Create the warning element with the id, class, icon, and text
-  let warning = createWarningElement(
-    "successfulWarning",
-    "success-msg",
-    "fa fa-check",
-    boldText + " " + text
-  );
-
-  // Append the warning element to the body of the document
-  document.body.appendChild(warning);
-
-  // Set the fade speed and the opacity
-  let fadeSpeed = 5000;
-  warning.style.opacity = "0";
-
-  // Display the warning element with a fadeIn animation
-  warning.style.display = "block";
-  warning.style.animation = "fadeIn 0.5s ease-in-out forwards";
-  warning.style.opacity = "1";
-
-  // Bind a click event to the warning element to close it
-  warning.addEventListener("click", function () {
-    // Set the fade speed to 0
-    fadeSpeed = 0;
-
-    // Fade out the warning element
-    setTimeout(() => {
-      warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-    }, fadeSpeed);
-
-    // Remove the warning element from the document
-    setTimeout(() => {
-      warning.remove();
-    }, fadeSpeed + 400);
-  });
-
-  // Set a timeout to close the warning element automatically
-  setTimeout(() => {
-    // Fade out the warning element
-    warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-  }, fadeSpeed);
-
-  // Remove the warning element from the document
-  setTimeout(() => {
-    warning.remove();
-  }, fadeSpeed + 400);
+export function successfulWarning(boldText, text){
+  var warning = createWarningElement("successfulWarning", "fa fa-check", "success-msg");
+  displayWarning(warning, boldText, text);
 }
 
-// Modify the infoWarning function to create and append the warning element
-export function infoWarning(boldText, text) {
-  // Create the warning element with the id, class, icon, and text
-  let warning = createWarningElement(
-    "infoWarning",
-    "info-msg",
-    "fa fa-info-circle",
-    boldText + " " + text
-  );
-
-  // Append the warning element to the body of the document
-  document.body.appendChild(warning);
-
-  // Set the fade speed and the opacity
-  let fadeSpeed = 5000;
-  warning.style.opacity = "0";
-
-  // Display the warning element with a fadeIn animation
-  warning.style.display = "block";
-  warning.style.animation = "fadeIn 0.5s ease-in-out forwards";
-  warning.style.opacity = "1";
-
-  // Bind a click event to the warning element to close it
-  warning.addEventListener("click", function () {
-    // Set the fade speed to 0
-    fadeSpeed = 0;
-
-    // Fade out the warning element
-    setTimeout(() => {
-      warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-    }, fadeSpeed);
-
-    // Remove the warning element from the document
-    setTimeout(() => {
-      warning.remove();
-    }, fadeSpeed + 400);
-  });
-
-  // Set a timeout to close the warning element automatically
-  setTimeout(() => {
-    // Fade out the warning element
-    warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-  }, fadeSpeed);
-
-  // Remove the warning element from the document
-  setTimeout(() => {
-    warning.remove();
-  }, fadeSpeed + 400);
+export function infoWarning(boldText, text){
+  var warning = createWarningElement("infoWarning", "fa fa-info-circle", "info-msg");
+  displayWarning(warning, boldText, text);
 }
 
-// Modify the alertWarning function to create and append the warning element
-export function alertWarning(boldText, text) {
-  // Create the warning element with the id, class, icon, and text
-  let warning = createWarningElement(
-    "alertWarning",
-    "warning-msg",
-    "fa fa-warning",
-    boldText + " " + text
-  );
-
-  // Append the warning element to the body of the document
-  document.body.appendChild(warning);
-
-  // Set the fade speed and the opacity
-  let fadeSpeed = 5000;
-  warning.style.opacity = "0";
-
-  // Display the warning element with a fadeIn animation
-  warning.style.display = "block";
-  warning.style.animation = "fadeIn 0.5s ease-in-out forwards";
-  warning.style.opacity = "1";
-
-  // Bind a click event to the warning element to close it
-  warning.addEventListener("click", function () {
-    // Set the fade speed to 0
-    fadeSpeed = 0;
-
-    // Fade out the warning element
-    setTimeout(() => {
-      warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-    }, fadeSpeed);
-
-    // Remove the warning element from the document
-    setTimeout(() => {
-      warning.remove();
-    }, fadeSpeed + 400);
-  });
-
-  // Set a timeout to close the warning element automatically
-  setTimeout(() => {
-    // Fade out the warning element
-    warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-  }, fadeSpeed);
-
-  // Remove the warning element from the document
-  setTimeout(() => {
-    warning.remove();
-  }, fadeSpeed + 400);
+export function alertWarning(boldText, text){
+  var warning = createWarningElement("alertWarning", "fa fa-warning", "warning-msg");
+  displayWarning(warning, boldText, text);
 }
 
-// Modify the errorWarning function to create and append the warning element
-export function errorWarning(boldText, text) {
-  // Create the warning element with the id, class, icon, and text
-  let warning = createWarningElement(
-    "errorWarning",
-    "error-msg",
-    "fa fa-times-circle",
-    boldText + " " + text
-  );
+export function errorWarning(boldText, text){
+  var warning = createWarningElement("errorWarning", "fa fa-times-circle", "error-msg");
+  displayWarning(warning, boldText, text);
+}
 
-  // Append the warning element to the body of the document
-  document.body.appendChild(warning);
-
-  // Set the fade speed and the opacity
-  let fadeSpeed = 5000;
-  warning.style.opacity = "0";
-
-  // Display the warning element with a fadeIn animation
-  warning.style.display = "block";
+function displayWarning(warning, boldText, text){
+  var container = document.querySelector("#messageContainer");
+  var bold = warning.querySelector("strong");
+  var fadeSpeed = 5000;
+  bold.textContent = boldText + ' ' + text;
+  warning.style.opacity = '0';
+  container.appendChild(warning);
+  warning.style.display = 'block';
   warning.style.animation = "fadeIn 0.5s ease-in-out forwards";
-  warning.style.opacity = "1";
+  warning.style.opacity = '1';
 
-  // Bind a click event to the warning element to close it
-  warning.addEventListener("click", function () {
-    // Set the fade speed to 0
-    fadeSpeed = 0;
-
-    // Fade out the warning element
-    setTimeout(() => {
-      warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
-    }, fadeSpeed);
-
-    // Remove the warning element from the document
-    setTimeout(() => {
-      warning.remove();
-    }, fadeSpeed + 400);
-  });
-
-  // Set a timeout to close the warning element automatically
   setTimeout(() => {
-    // Fade out the warning element
     warning.style.animation = "fadeOut 0.5s ease-in-out forwards";
   }, fadeSpeed);
-
-  // Remove the warning element from the document
+  
   setTimeout(() => {
-    warning.remove();
+    warning.style.display = 'none';
+    container.removeChild(warning);
   }, fadeSpeed + 400);
 }
 
