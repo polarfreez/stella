@@ -1,2 +1,2 @@
 # stella
-nothing (yet)
+nada (por enquanto)
