@@ -430,25 +430,28 @@ p {
 .success-msg,
 .warning-msg,
 .error-msg {
+  position: fixed;
+  top: 10;
+  right: 10;
   margin: 10px 0;
   padding: 10px;
   border-radius: 3px 3px 3px 3px;
 }
 .info-msg {
-  color: #059;
-  background-color: #BEF;
+  color: #0396ff;
+  background-color: rgba(7, 73, 149, 0.16);
 }
 .success-msg {
-  color: #270;
-  background-color: #DFF2BF;
+  color: #0ad406;
+  background-color: rgba(7, 149, 66, 0.16);
 }
 .warning-msg {
-  color: #9F6000;
-  background-color: #FEEFB3;
+  color: #ffb103;
+  background-color: rgba(220, 128, 1, 0.16);
 }
 .error-msg {
-  color: #D8000C;
-  background-color: #FFBABA;
+  color: #ff0303;
+  background-color: rgba(220, 17, 1, 0.16);
 }
 
 #closePasswordModal {
