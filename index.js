@@ -275,7 +275,6 @@ function createWarningElement(id, iconClass, msgClass) {
       document.querySelector("#messageContainer").removeChild(div);
     }, 500);
   };
-  div.appendChild(closeBtn);
 
   var i = document.createElement("i");
   i.className = iconClass;
@@ -285,6 +284,7 @@ function createWarningElement(id, iconClass, msgClass) {
   var p = document.createElement("p");
   div.appendChild(strong);
   div.appendChild(p);
+  div.appendChild(closeBtn);
 
   return div;
 }
