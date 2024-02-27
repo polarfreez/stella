@@ -14,6 +14,18 @@ window.onload = function(){
   historyElement.appendChild(historyMessageGroup);
 }
 
+$("#submit").click(function () {
+  document.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+});
+
+const submitButtonElement = document.querySelector("#submit");
+
+submitButtonElement.addEventListener("touchend", (e)=>{
+  e.preventDefault();
+  document.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+  this.addGuestClicked(this.guestName);
+})
+
 // Get the hash value without the # character
 var hash = window.location.hash.substring(1);
 
