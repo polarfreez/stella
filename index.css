@@ -338,7 +338,9 @@ strong,
 }
 
 ul {
-  padding-inline-start: 40px;
+    padding-inline-start: 20px !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
 }
 
 li {
