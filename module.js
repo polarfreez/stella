@@ -271,7 +271,7 @@ async function run(rawInput, password) {
           const imagePath = createImage(formatedImagePrompt);
         
           // Se você quiser remover as chamadas de sendEmail do texto original
-          gen.textContent = gen.textContent.replace(imageCreationRegex, "[AI Image](" + imagePath + ")");
+          gen.textContent = gen.textContent.replace(createImageRegex, "[AI Image](" + imagePath + ")");
         }
 
         setTimeout(() => {
