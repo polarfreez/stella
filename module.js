@@ -462,18 +462,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-$("#submit").click(function () {
-  document.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
-});
-
-const submitButtonElement = document.querySelector("#submit");
-
-submitButtonElement.addEventListener("touchend", (e)=>{
-  e.preventDefault();
-  document.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
-  this.addGuestClicked(this.guestName);
-})
-
 function fadeInOut(DOMElement, fadeType, displayType) {
   if (fadeType == "fadeOut") {
     DOMElement.style.animation = "fadeOut 0.5s ease-in-out forwards";
