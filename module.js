@@ -29,7 +29,7 @@ const marked = new Marked(
 );
 
 let history = "";
-var formattedDate;
+var formatedDate;
 var generating = false;
 
 // A function that requests a file from the server and logs its contents
@@ -62,9 +62,9 @@ window.onload = function () {
     hour12: false,
   };
 
-  formattedDate = new Intl.DateTimeFormat(locale, options).format(currentDate);
+  formatedDate = new Intl.DateTimeFormat(locale, options).format(currentDate);
 
-  historyReader(formattedDate);
+  historyReader(formatedDate);
 };
 
 function getRandomDuration(value1, value2) {
@@ -246,11 +246,11 @@ async function run(rawInput, password) {
         // Check if there are matches
         if (emailContentMatches) {
           // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formattedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
-          console.log(formattedEmailContent);
+          const formatedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          console.log(formatedEmailContent);
         
           // Agora você pode fazer o que quiser com o conteúdo extraído
-          sendEmail(formattedEmailContent);
+          sendEmail(formatedEmailContent);
         
           // Se você quiser remover as chamadas de sendEmail do texto original
           gen.textContent = gen.textContent.replace(emailContentRegex, "");
@@ -264,8 +264,8 @@ async function run(rawInput, password) {
                 // Check if there are matches
         if (createImageMatches) {
           // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formattedImagePrompt = createImageMatches.map(match => match.match(/createImage\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
-          console.log(formattedImagePrompt);
+          const formatedImagePrompt = createImageMatches.map(match => match.match(/createImage\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          console.log(formatedImagePrompt);
         
           // Agora você pode fazer o que quiser com o conteúdo extraído
           const imagePath = createImage(formatedImagePrompt);
@@ -378,11 +378,11 @@ async function run(rawInput, password) {
         // Check if there are matches
         if (emailContentMatches) {
           // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formattedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
-          console.log(formattedEmailContent);
+          const formatedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          console.log(formatedEmailContent);
         
           // Agora você pode fazer o que quiser com o conteúdo extraído
-          // sendEmail(formattedEmailContent);
+          // sendEmail(formatedEmailContent);
         
           // Se você quiser remover as chamadas de sendEmail do texto original
           gen.textContent = gen.textContent.replace(emailContentRegex, "");
@@ -409,7 +409,7 @@ async function run(rawInput, password) {
 }
 
 $("#clearHistory").bind("click", function () {
-  historyReader(formattedDate);
+  historyReader(formatedDate);
   let historyElement = document.querySelector("#history");
   infoWarning("Chat resetado!", "O histórico dessa conversa foi limpo!");
   historyElement.style.animation = "fadeOut 0.5s ease-in-out forwards";
