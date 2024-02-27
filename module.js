@@ -7,6 +7,7 @@ import { infoWarning } from "./index.js";
 import { alertWarning } from "./index.js";
 import { errorWarning } from "./index.js";
 import { enableTTS } from "./index.js";
+import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.12.1/+esm";
 
 import { Marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
@@ -255,6 +256,24 @@ async function run(rawInput, password) {
           gen.textContent = gen.textContent.replace(emailContentRegex, "");
         }
 
+        const createImageRegex = /createImage\("([^"]+)"\)/g;
+
+
+      const createImageMatches = gen.textContent.match(createImageRegex);
+
+                // Check if there are matches
+        if (createImageMatches) {
+          // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
+          const formattedImagePrompt = createImageMatches.map(match => match.match(/createImage\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          console.log(formattedImagePrompt);
+        
+          // Agora você pode fazer o que quiser com o conteúdo extraído
+          const imagePath = createImage(formatedImagePrompt);
+        
+          // Se você quiser remover as chamadas de sendEmail do texto original
+          gen.textContent = gen.textContent.replace(imageCreationRegex, "[AI Image](" + imagePath + ")");
+        }
+
         setTimeout(() => {
           fadeInOut(gen, "fadeIn", "flex");
         }, 500);
@@ -474,6 +493,24 @@ function fadeInOut(DOMElement, fadeType, displayType) {
     DOMElement.style.display = `${displayType}`;
     DOMElement.style.animation = "fadeIn 0.5s ease-in-out forwards";
   }
+}
+
+function createImage(prompt) {
+  const app = await client("multimodalart/stable-cascade");
+  const result = await app.predict("/run", [		
+  				prompt, // string  in 'Prompt' Textbox component		
+  				"verybadimagenegative_v1.3, ng_deepnegative_v1_75t, (ugly face:0.8),cross-eyed,sketches, (worst quality:2), (low quality:2), (normal quality:2), lowres, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, bad anatomy, DeepNegative, facing away, tilted head, {Multiple people}, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worstquality, low quality, normal quality, jpegartifacts, signature, watermark, username, blurry, bad feet, cropped, poorly drawn hands, poorly drawn face, mutation, deformed, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, extra fingers, fewer digits, extra limbs, extra arms,extra legs, malformed limbs, fused fingers, too many fingers, long neck, cross-eyed,mutated hands, polar lowres, bad body, bad proportions, gross proportions, text, error, missing fingers, missing arms, missing legs, extra digit, extra arms, extra leg, extra foot, ((repeating hair))", // string  in 'Negative prompt' Textbox component		
+  				0, // number (numeric value between 0 and 2147483647) in 'Seed' Slider component		
+  				1024, // number (numeric value between 1024 and 1536) in 'Width' Slider component		
+  				1024, // number (numeric value between 1024 and 1536) in 'Height' Slider component		
+  				10, // number (numeric value between 10 and 30) in 'Prior Inference Steps' Slider component		
+  				0, // number (numeric value between 0 and 20) in 'Prior Guidance Scale' Slider component		
+  				4, // number (numeric value between 4 and 12) in 'Decoder Inference Steps' Slider component		
+  				0, // number (numeric value between 0 and 0) in 'Decoder Guidance Scale' Slider component		
+  				1, // number (numeric value between 1 and 2) in 'Number of Images' Slider component
+  	]);
+  
+  return result
 }
 
 function sendEmail(emailMessage) {
