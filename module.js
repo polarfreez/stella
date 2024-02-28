@@ -369,25 +369,6 @@ async function run(rawInput, password) {
             "reverseColor 1s linear forwards, reverseGlow 1s linear forwards, blink 1s infinite linear";
         }
 
-        // Extract the email content using a regular expression
-        const emailContentRegex = /sendEmail\("([^"]+)"\)/g;
-        const emailContentMatches = gen.textContent.match(emailContentRegex);
-        
-        console.log(emailContentMatches);
-        
-        // Check if there are matches
-        if (emailContentMatches) {
-          // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formatedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
-          console.log(formatedEmailContent);
-        
-          // Agora você pode fazer o que quiser com o conteúdo extraído
-          // sendEmail(formatedEmailContent);
-        
-          // Se você quiser remover as chamadas de sendEmail do texto original
-          gen.textContent = gen.textContent.replace(emailContentRegex, "");
-        }
-
         setTimeout(() => {
           fadeInOut(gen, "fadeIn", "flex");
         }, 500);
@@ -496,7 +477,7 @@ function fadeInOut(DOMElement, fadeType, displayType) {
 }
 
 async function createImage(prompt) {
-  const app = await client("multimodalart/stable-cascade");
+  const app = await client("Robathan/stable-cascade");
   const result = await app.predict("/run", [		
   				prompt, // string  in 'Prompt' Textbox component		
   				"verybadimagenegative_v1.3, ng_deepnegative_v1_75t, (ugly face:0.8),cross-eyed,sketches, (worst quality:2), (low quality:2), (normal quality:2), lowres, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, bad anatomy, DeepNegative, facing away, tilted head, {Multiple people}, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worstquality, low quality, normal quality, jpegartifacts, signature, watermark, username, blurry, bad feet, cropped, poorly drawn hands, poorly drawn face, mutation, deformed, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, extra fingers, fewer digits, extra limbs, extra arms,extra legs, malformed limbs, fused fingers, too many fingers, long neck, cross-eyed,mutated hands, polar lowres, bad body, bad proportions, gross proportions, text, error, missing fingers, missing arms, missing legs, extra digit, extra arms, extra leg, extra foot, ((repeating hair))", // string  in 'Negative prompt' Textbox component		
@@ -510,7 +491,7 @@ async function createImage(prompt) {
   				1, // number (numeric value between 1 and 2) in 'Number of Images' Slider component
   	]);
   
-  return result
+  return result;
 }
 
 function sendEmail(emailMessage) {
