@@ -882,6 +882,7 @@ pre {
   position: relative;
   margin: 20px;
   transition: all 0.5s ease;
+  pointer-events: auto !important;
 }
 
 #submit svg {
