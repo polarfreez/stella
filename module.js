@@ -481,7 +481,6 @@ async function createImage(prompt) {
   	const response = await fetch(
   		"https://api-inference.huggingface.co/models/stabilityai/stable-cascade",
   		{
-        mode: 'no-cors',
   			headers: { Authorization: "Bearer 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" },
   			method: "POST",
   			body: JSON.stringify(data),
