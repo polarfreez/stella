@@ -268,7 +268,7 @@ async function run(rawInput, password) {
           console.log(formatedImagePrompt);
         
           // Agora você pode fazer o que quiser com o conteúdo extraído
-          const imagePath = createImage(formatedImagePrompt);
+          const imagePath = await createImage(formatedImagePrompt);
         
           // Se você quiser remover as chamadas de sendEmail do texto original
           gen.textContent = gen.textContent.replace(createImageRegex, "[AI Image](" + imagePath + ")");
