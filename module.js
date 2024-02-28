@@ -477,22 +477,18 @@ function fadeInOut(DOMElement, fadeType, displayType) {
 }
 
 async function createImage(prompt) {
-  async function query(data) {
-  	const response = await fetch(
-  		"https://api-inference.huggingface.co/models/stabilityai/stable-cascade",
-  		{
-  			headers: { Authorization: "Bearer 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" },
-  			method: "POST",
-  			body: JSON.stringify(data),
-  		}
-  	);
-  	const result = await response.blob();
-  	return result;
-  }
-  query({"inputs": prompt}).then((response) => {
-  	  return response;
-  });
+    const response = await fetch(
+      "https://api-inference.huggingface.co/models/stabilityai/stable-cascade",
+      {
+        headers: { Authorization: "Bearer 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" },
+        method: "POST",
+        body: JSON.stringify({"inputs": prompt}),
+      }
+    );
+    const result = await response.blob();
+    return result;
 }
+
 
 function sendEmail(emailMessage) {
   var data = {
