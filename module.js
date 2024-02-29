@@ -164,12 +164,12 @@ async function run(rawInput, password) {
           });
         }, 0);
 
-        aiProfileElement.id = 'aiProfile';
+        aiProfileElement.id = "aiProfile";
         historyMessageGroup.appendChild(gen);
         historyMessageGroup.appendChild(aiProfileElement);
 
-        if(gen.textContent.includes("END_OF_DIALOG")){
-          gen.textContent = gen.textContent.replace("END_OF_DIALOG","");
+        if (gen.textContent.includes("END_OF_DIALOG")) {
+          gen.textContent = gen.textContent.replace("END_OF_DIALOG", "");
         }
 
         // check if gen has any pre elements
@@ -240,38 +240,44 @@ async function run(rawInput, password) {
         // Extract the email content using a regular expression
         const emailContentRegex = /sendEmail\("([^"]+)"\)/g;
         const emailContentMatches = gen.textContent.match(emailContentRegex);
-        
+
         console.log(emailContentMatches);
-        
+
         // Check if there are matches
         if (emailContentMatches) {
           // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formatedEmailContent = emailContentMatches.map(match => match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          const formatedEmailContent = emailContentMatches.map((match) =>
+            match.match(/sendEmail\("([^"]+)"\)/)[1].replace(/\\n/g, "\n")
+          );
           console.log(formatedEmailContent);
-        
+
           // Agora você pode fazer o que quiser com o conteúdo extraído
           sendEmail(formatedEmailContent);
-        
+
           // Se você quiser remover as chamadas de sendEmail do texto original
           gen.textContent = gen.textContent.replace(emailContentRegex, "");
         }
 
         const createImageRegex = /createImage\("([^"]+)"\)/g;
 
+        const createImageMatches = gen.textContent.match(createImageRegex);
 
-      const createImageMatches = gen.textContent.match(createImageRegex);
-
-                // Check if there are matches
+        // Check if there are matches
         if (createImageMatches) {
           // Extract content between quotes and replace any occurrences of '\n' with actual line breaks
-          const formatedImagePrompt = createImageMatches.map(match => match.match(/createImage\("([^"]+)"\)/)[1].replace(/\\n/g, "\n"));
+          const formatedImagePrompt = createImageMatches.map((match) =>
+            match.match(/createImage\("([^"]+)"\)/)[1].replace(/\\n/g, "\n")
+          );
           console.log(formatedImagePrompt);
-        
+
           // Agora você pode fazer o que quiser com o conteúdo extraído
           const imagePath = await createImage(formatedImagePrompt);
-        
+
           // Se você quiser remover as chamadas de sendEmail do texto original
-          gen.textContent = gen.textContent.replace(createImageRegex, "[AI Image](" + imagePath + ")");
+          gen.textContent = gen.textContent.replace(
+            createImageRegex,
+            "[AI Image](" + imagePath + ")"
+          );
         }
 
         setTimeout(() => {
@@ -279,7 +285,10 @@ async function run(rawInput, password) {
         }, 500);
 
         messageIndex++;
-      } else if (lastTokenFormated.includes("{{user}}") || lastTokenFormated.includes("END_OF_DIALOG")) {
+      } else if (
+        lastTokenFormated.includes("{{user}}") ||
+        lastTokenFormated.includes("END_OF_DIALOG")
+      ) {
         gen.innerHTML = marked.parse(gen.textContent);
         let historyElement = document.querySelector("#history");
         let historyMessageGroup = document.querySelector(
@@ -296,12 +305,12 @@ async function run(rawInput, password) {
           });
         }, 0);
 
-        aiProfileElement.id = 'aiProfile';
+        aiProfileElement.id = "aiProfile";
         historyMessageGroup.appendChild(gen);
         historyMessageGroup.appendChild(aiProfileElement);
 
-        if(gen.textContent.includes("END_OF_DIALOG")){
-          gen.textContent = gen.textContent.replace("END_OF_DIALOG","");
+        if (gen.textContent.includes("END_OF_DIALOG")) {
+          gen.textContent = gen.textContent.replace("END_OF_DIALOG", "");
         }
 
         // check if gen has any pre elements
@@ -395,7 +404,7 @@ $("#clearHistory").bind("click", function () {
   infoWarning("Chat resetado!", "O histórico dessa conversa foi limpo!");
   historyElement.style.animation = "fadeOut 0.5s ease-in-out forwards";
   setTimeout(() => {
-    $('#history div').not('#messageIndex0, #messageIndex0 *').remove();
+    $("#history div").not("#messageIndex0, #messageIndex0 *").remove();
     historyElement.style.animation = "fadeIn 0.5s ease-in-out forwards";
   }, 525);
 });
@@ -478,22 +487,21 @@ function fadeInOut(DOMElement, fadeType, displayType) {
 
 async function createImage(prompt) {
   const app = await client("multimodalart/stable-cascade");
-  const result = await app.predict("/run", [		
-  				prompt, // string  in 'Prompt' Textbox component		
-  				"verybadimagenegative_v1.3, ng_deepnegative_v1_75t, (ugly face:0.8),cross-eyed,sketches, (worst quality:2), (low quality:2), (normal quality:2), lowres, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, bad anatomy, DeepNegative, facing away, tilted head, {Multiple people}, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worstquality, low quality, normal quality, jpegartifacts, signature, watermark, username, blurry, bad feet, cropped, poorly drawn hands, poorly drawn face, mutation, deformed, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, extra fingers, fewer digits, extra limbs, extra arms,extra legs, malformed limbs, fused fingers, too many fingers, long neck, cross-eyed,mutated hands, polar lowres, bad body, bad proportions, gross proportions, text, error, missing fingers, missing arms, missing legs, extra digit, extra arms, extra leg, extra foot, ((repeating hair))", // string  in 'Negative prompt' Textbox component		
-  				Math.random() * 2147483646, // number (numeric value between 0 and 2147483647) in 'Seed' Slider component		
-  				1024, // number (numeric value between 1024 and 1536) in 'Width' Slider component		
-  				1024, // number (numeric value between 1024 and 1536) in 'Height' Slider component		
-  				10, // number (numeric value between 10 and 30) in 'Prior Inference Steps' Slider component		
-  				0, // number (numeric value between 0 and 20) in 'Prior Guidance Scale' Slider component		
-  				4, // number (numeric value between 4 and 12) in 'Decoder Inference Steps' Slider component		
-  				0, // number (numeric value between 0 and 0) in 'Decoder Guidance Scale' Slider component		
-  				1, // number (numeric value between 1 and 2) in 'Number of Images' Slider component
-  	]);
-  
+  const result = await app.predict("/run", [
+    prompt, // string  in 'Prompt' Textbox component
+    "verybadimagenegative_v1.3, ng_deepnegative_v1_75t, (ugly face:0.8),cross-eyed,sketches, (worst quality:2), (low quality:2), (normal quality:2), lowres, normal quality, ((monochrome)), ((grayscale)), skin spots, acnes, skin blemishes, bad anatomy, DeepNegative, facing away, tilted head, {Multiple people}, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worstquality, low quality, normal quality, jpegartifacts, signature, watermark, username, blurry, bad feet, cropped, poorly drawn hands, poorly drawn face, mutation, deformed, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, extra fingers, fewer digits, extra limbs, extra arms,extra legs, malformed limbs, fused fingers, too many fingers, long neck, cross-eyed,mutated hands, polar lowres, bad body, bad proportions, gross proportions, text, error, missing fingers, missing arms, missing legs, extra digit, extra arms, extra leg, extra foot, ((repeating hair))", // string  in 'Negative prompt' Textbox component
+    Math.random() * 2147483646, // number (numeric value between 0 and 2147483647) in 'Seed' Slider component
+    1024, // number (numeric value between 1024 and 1536) in 'Width' Slider component
+    1024, // number (numeric value between 1024 and 1536) in 'Height' Slider component
+    10, // number (numeric value between 10 and 30) in 'Prior Inference Steps' Slider component
+    0, // number (numeric value between 0 and 20) in 'Prior Guidance Scale' Slider component
+    4, // number (numeric value between 4 and 12) in 'Decoder Inference Steps' Slider component
+    0, // number (numeric value between 0 and 0) in 'Decoder Guidance Scale' Slider component
+    1, // number (numeric value between 1 and 2) in 'Number of Images' Slider component
+  ]);
+
   return result;
 }
-
 
 function sendEmail(emailMessage) {
   var data = {
@@ -513,7 +521,10 @@ function sendEmail(emailMessage) {
     contentType: "application/json",
   })
     .done(function () {
-      infoWarning("Seu email foi enviado!", "Um email foi enviado para o criador de Stella, Stoltz.");
+      infoWarning(
+        "Seu email foi enviado!",
+        "Um email foi enviado para o criador de Stella, Stoltz."
+      );
     })
     .fail(function (error) {
       errorWarning("Oops... ", JSON.stringify(error));
